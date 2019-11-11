@@ -11,6 +11,8 @@ server.interceptors.request.use((config)=>{
     if(config.method==="get"){
         config.params={...config.data}
     }
+
+    
     // config.headers["content-type"]="application/json"
 })
 
