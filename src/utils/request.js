@@ -12,8 +12,11 @@ server.interceptors.request.use((config)=>{
         config.params={...config.data}
     }
 
+    return config;
     
     // config.headers["content-type"]="application/json"
+},(err)=>{
+    return Promise.reject(err)
 })
 
 
@@ -22,6 +25,8 @@ server.interceptors.response.use((res)=>{
     if(res.status===200){
         return res.data;
     }
+},(err)=>{
+    return Promise.reject(err)
 })
 
 export default server;

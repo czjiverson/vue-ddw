@@ -45,7 +45,7 @@ const router=new VueRouter({
             name:"mine",
             meta:{
                 flag:true,
-                requiredAuth:true
+                requiredAuth:false
             }
         },
         {

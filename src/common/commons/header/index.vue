@@ -1,7 +1,7 @@
 <template>
   <div class="mydd_header">
     <div>
-      <p v-show="icon" @tap="handleBack()">&lt;</p>
+      <v-touch class="back" v-show="icon" @tap="handleBack()">&lt;</v-touch>
     </div>
     <span>{{title}}</span>
     <p class="iconfont">&#xe86d;</p>
@@ -22,7 +22,6 @@ export default {
   },
   methods:{
     handleBack(){
-      console.log(111);
       this.$router.back();
     }
   }
@@ -53,6 +52,11 @@ export default {
   float: left;
   width: .117rem;
   height:100%;
+}
+
+.back{
+  font-size: 0.233rem;
+  line-height: 0.367rem;
 }
 
 .mydd_header span:nth-child(2) {

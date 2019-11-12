@@ -2,9 +2,15 @@ const path=require("path")
 
 module.exports={
     devServer:{
+        port:8080,
+        open:true,
         proxy:{
             "/api":{
                 target:"http://192.168.137.1",
+                changeOrigin:true
+            },
+            "/index.php":{
+                target:"http://touch.m.dangdang.com",
                 changeOrigin:true
             }
         }
@@ -25,3 +31,4 @@ module.exports={
         }
     }
 }
+// http://touch.m.dangdang.com/index.php?floor_pageid=162262_0&seq=0&action=index_floor&preview_time=0
