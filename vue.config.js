@@ -5,12 +5,12 @@ module.exports={
         port:8080,
         open:true,
         proxy:{
-            "/api":{
-                target:"http://192.168.137.1",
+            "/h5ajax.php":{
+                target:"http://touch.m.dangdang.com",
                 changeOrigin:true
             },
-            "/index.php":{
-                target:"http://touch.m.dangdang.com",
+            "/ddcategory.php":{
+                target:"http://search.m.dangdang.com",
                 changeOrigin:true
             },
             "/h5ajax.php":{
@@ -35,4 +35,3 @@ module.exports={
         }
     }
 }
-// http://touch.m.dangdang.com/index.php?floor_pageid=162262_0&seq=0&action=index_floor&preview_time=0

@@ -56,6 +56,24 @@ const router=new VueRouter({
                 flag:false,
                 requiredAuth:false
             }
+        },
+        {
+            path:"/city",
+            component:_=>import("@pages/city"),
+            name:"city",
+            meta:{
+                flag:false,
+                requiredAuth:false
+            }
+        },
+        {
+            path:"/search",
+            component:_=>import("@pages/search"),
+            name:"search",
+            meta:{
+                flag:false,
+                requiredAuth:false
+            }
         }
     ]
 })
