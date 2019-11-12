@@ -72,6 +72,7 @@
           </li>
         </ul>
       </div>
+<<<<<<< HEAD
 
 
       <div class="home_list">
@@ -86,6 +87,9 @@
       
 
 
+=======
+      
+>>>>>>> czj
     </div>
   </div>
 </template>
