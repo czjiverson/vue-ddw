@@ -12,6 +12,10 @@ module.exports={
             "/index.php":{
                 target:"http://touch.m.dangdang.com",
                 changeOrigin:true
+            },
+            "/h5ajax.php":{
+                target:"http://touch.m.dangdang.com",
+                changeOrigin:true
             }
         }
     },

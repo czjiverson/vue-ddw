@@ -3,12 +3,11 @@ import http from "@utils/request"
 
 export const homeApi =()=>http({
     method:"get",
-    url:"/index.php",
+    url:"/h5ajax.php",
     data:{
-        floor_pageid:"147903_4",
-        seq:4,
-        action:"index_floor",
-        preview_time:0
+        action:"home",
+        img_size:"h",
+        perm_id:20191107142736496267707743358292076
     }
 })
 
