@@ -1,9 +1,11 @@
 import Vue from "vue"
 import Header from "./header"
+import BScroll from "./bscroll"
 
 
 let commonsMap=[
-    Header
+    Header,
+    BScroll
 ]
 
 

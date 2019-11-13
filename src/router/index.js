@@ -1,6 +1,7 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
 import home from "./home"
+import fenlei from "./fenlei"
 Vue.use(VueRouter);
 
 
@@ -12,15 +13,7 @@ const router=new VueRouter({
             redirect:"/home"
         },
         home,
-        {
-            path:"/fenlei",
-            component:_=>import("@pages/fenlei"),
-            name:"fenlei",
-            meta:{
-                flag:true,
-                requiredAuth:false
-            }
-        },
+        fenlei,
         {
             path:"/buy",
             component:_=>import("@pages/buy"),
