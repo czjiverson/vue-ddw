@@ -1,0 +1,33 @@
+export default {
+    path:"/home",
+    component:_=>import("@pages/home"),
+    name:"home",
+    meta:{
+        flag:true,
+        requiredAuth:false
+    },
+    children:[
+        {
+            path:"/home",
+            redirect:"/home/homeLeft"
+        },
+        {
+            path:"homeLeft",
+            component:_=>import("@components/homeLeft"),
+            name:"homeLeft",
+            meta:{
+                flag:true,
+                requiredAuth:false
+            }
+        },
+        {
+            path:"homeRight",
+            component:_=>import("@components/homeRight"),
+            name:"homeRight",
+            meta:{
+                flag:true,
+                requiredAuth:false
+            }
+        }
+    ]
+}
