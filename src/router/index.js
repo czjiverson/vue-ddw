@@ -67,6 +67,30 @@ const router=new VueRouter({
                 flag:false,
                 requiredAuth:false
             }
+        },
+        {
+            path:"/tushuList",
+            component:_=>import("@pages/tushuList"),
+            name:"tushuList",
+            meta:{
+                flag:true,
+                requiredAuth:false
+            },
+            children:[
+                {
+                    path:"/tushuList",
+                    redirect:"/tushuList/tushuLists/1"
+                },
+                {
+                    path:"/tushuList/tushuLists/:id",
+                    component:_=>import("@components/tushuList"),
+                    name:"tushuLists",
+                    meta:{
+                        flag:true,
+                        requiredAuth:false
+                    }
+                }
+            ]
         }
     ]
 })
