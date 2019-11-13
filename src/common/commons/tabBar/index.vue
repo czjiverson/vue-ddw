@@ -6,7 +6,6 @@
       :to="item.path" 
       v-for="(item,index) in arr" 
       :key="index"
-      
       >
         <p class="iconfont" v-html="item.icon"></p>
         <p>{{item.name}}</p>
@@ -90,7 +89,7 @@ export default {
   font-size: 0.067rem;
 }
 
-.router-link-active{
+.dd_footer ul .router-link-active{
   color:#c33;
 }
 </style>
