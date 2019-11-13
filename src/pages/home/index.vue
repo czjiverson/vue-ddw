@@ -42,65 +42,16 @@
           </keep-alive>
         </div>
       </div>
-<<<<<<< HEAD
-
-
-
-      <keep-alive>
-        <router-view></router-view>
-      </keep-alive>
-
-
-
-      </div>
-<<<<<<< HEAD
-
-
-      <div class="home_list">
-        <ul>
-          <li>
-            <a href="#">
-              
-            </a>
-          </li>
-        </ul>
-      </div>
-      
-
-
-=======
-      
->>>>>>> czj
-    </div>
-=======
     </Bscroll>
->>>>>>> czj
   </div>
 </template>
 
 <script>
 export default {
   name: "Home",
-<<<<<<< HEAD
-  data(){
-<<<<<<< HEAD
-    return {
-      ms:[]
-    }
-  },
-  async created(){
-    let data = await homeApi();
-    console.log(data)
-    this.ms=data.reco_list;
-  }
-=======
-    return{
-      images:[
-=======
   data() {
     return {
       images: [
->>>>>>> czj
         [
           {
             img:
@@ -148,13 +99,8 @@ export default {
     };
   },
   mounted(){
-<<<<<<< HEAD
->>>>>>> czj
-
-=======
     this.$refs.scroll.handleScroll()
     this.$refs.scroll.handlepullingDown()
->>>>>>> czj
   }
 };
 </script>
