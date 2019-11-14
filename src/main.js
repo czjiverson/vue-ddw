@@ -3,13 +3,14 @@ import App from './App.vue'
 import router from "./router"
 import VueTouch from "vue-touch"
 import "@common/commons"
-
+import { Swipe, SwipeItem } from 'vant';
+import "@mock/tushuList"
 
 
 
 Vue.config.productionTip = false
 Vue.use(VueTouch,{name:"v-touch"})
-
+Vue.use(Swipe).use(SwipeItem);
 
 
 new Vue({

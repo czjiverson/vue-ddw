@@ -1,66 +1,100 @@
 <template>
   <!-- list_lists -->
-      <div class="list_lists">
-        <ul>
-          <li v-for="(item,index) in lists" :key="index">
-            <div class="list_img">
-              <img :src="item.image" alt />
-            </div>
-            <div class="list_cantainer">
-              <h1>{{item.title}}</h1>
-              <p>作者：{{item.username1}} 著 ,{{item.username2}} 图</p>
-              <p>出版社：{{item.city}}人民出版社</p>
-              <span>当当自营</span>
-              <span>限时抢</span>
-              <h4>
-                <span>￥{{item.price1}}</span>
-                <span>￥{{item.price2}}</span>
-              </h4>
-              <h5>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <i>{{item.pl}}条评论</i>
-              </h5>
-            </div>
-          </li>
-        </ul>
-      </div>
+  <div class="list_lists">
+    <Bscroll ref="scroll">
+      <ul>
+        <li v-for="(item,index) in lists" :key="index">
+          <div class="list_img">
+            <img :src="item.image" alt />
+          </div>
+          <div class="list_cantainer">
+            <h1>{{item.title}}</h1>
+            <p>作者：{{item.username1}} 著 ,{{item.username2}} 图</p>
+            <p>出版社：{{item.city}}人民出版社</p>
+            <span>当当自营</span>
+            <span>限时抢</span>
+            <h4>
+              <span>￥{{item.price1}}</span>
+              <span>￥{{item.price2}}</span>
+            </h4>
+            <h5>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <i>{{item.pl}}条评论</i>
+            </h5>
+          </div>
+        </li>
+      </ul>
+    </Bscroll>
+  </div>
 </template>
 
 <script>
-import tushuList from "@/mock";
+import {tushuListApi} from "@api/tushuList";
 export default {
-    name:"tushuLists",
-    data() {
+  name: "tushuLists",
+  data() {
     return {
-      lists: []
+      lists: [],
+      n:0
     };
   },
-  methods:{
-      handleTushuLists(){
-        let n=this.$route.params.id-1;
-    for(var i=n*20;i<(n+1)*20;i++){
-        this.lists.push(tushuList.data[i])
-    }
+  methods: {
+    async handleTushuLists(n,m) {
+      if(!n){
+
+        this.n=this.$route.params.id;
       }
+      if(!m){
+
+        this.lists=[]
+      }
+      let data=await tushuListApi(this.n);
+      this.lists=data.data.list;
+    },
+    
   },
   created() {
-    this.handleTushuLists()
+    this.handleTushuLists();
+    
   },
-  beforeRouteUpdate(to,from,next){
-     let {id} =  to.params
-      console.log(id);
-      this.handleTushuLists()
+  beforeRouteUpdate(to, from, next) {
+    next();
+    this.handleTushuLists();
+    this.$emit("handleLists",this.$route.params.title)
+  },
+  watch:{
+    lists(){
+      this.$refs.scroll.handleRefresh()
+    }
+  },
+  mounted(){
+    this.$refs.scroll.handleScroll();
+    this.$refs.scroll.handlepullingDown(() => {
+      var arr=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+      this.n=arr[parseInt(Math.random()*7)];
+      this.handleTushuLists(true)
+    });
+
+    this.$refs.scroll.handlepullingUp(()=>{
+      this.n=Number(this.n)+1;
+      this.handleTushuLists(true,true)
+    })
   }
-}
+};
 </script>
 
 <style>
 /* list_lists */
 .list_lists {
+  overflow: hidden;
+  height: 100%;
+}
+
+.list_lists ul {
   overflow: hidden;
 }
 
@@ -69,6 +103,7 @@ export default {
   width: 100%;
   height: 1.492rem;
   border-bottom: 1px solid #ccc;
+  background: #fff;
 }
 
 .list_img {

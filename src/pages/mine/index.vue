@@ -7,7 +7,7 @@
             <div class="mydd_section-info">
                 <div class="mydd_section-basic">
                     <img src="http://img61.ddimg.cn/upload_img/00610/home/user-bg.jpg" alt="">
-                    <a href="#">登录/注册</a>
+                    <router-link tag="span" to="/login">登录/注册</router-link>
                 </div>
                 <div class="mydd_section-stat">
                     <a href="#">
@@ -58,56 +58,11 @@
 
             <!-- mydd_section-vip -->
             <div class="mydd_section-vip">
-                <a href="#">
-                    <img src="http://img61.ddimg.cn/upload_img/00528/000/vip-1521514865.png" alt="">
-                    <p>我的订单</p>
+                <h6 v-for="(item,index) in mine" :key="index">
+                    <img :src="item.image" alt="">
+                    <p>{{item.name}}</p>
                     <p>></p>
-                </a>
-                <a href="#">
-                    <img src="http://img61.ddimg.cn/upload_img/00528/000/vip-1521514865.png" alt="">
-                    <p>我的订单</p>
-                    <p>></p>
-                </a>
-                <a href="#">
-                    <img src="http://img61.ddimg.cn/upload_img/00528/000/vip-1521514865.png" alt="">
-                    <p>我的订单</p>
-                    <p>></p>
-                </a>
-                <a href="#">
-                    <img src="http://img61.ddimg.cn/upload_img/00528/000/vip-1521514865.png" alt="">
-                    <p>我的订单</p>
-                    <p>></p>
-                </a>
-                <a href="#">
-                    <img src="http://img61.ddimg.cn/upload_img/00528/000/vip-1521514865.png" alt="">
-                    <p>我的订单</p>
-                    <p>></p>
-                </a>
-                <a href="#">
-                    <img src="http://img61.ddimg.cn/upload_img/00528/000/vip-1521514865.png" alt="">
-                    <p>我的订单</p>
-                    <p>></p>
-                </a>
-                <a href="#">
-                    <img src="http://img61.ddimg.cn/upload_img/00528/000/vip-1521514865.png" alt="">
-                    <p>我的订单</p>
-                    <p>></p>
-                </a>
-                <a href="#">
-                    <img src="http://img61.ddimg.cn/upload_img/00528/000/vip-1521514865.png" alt="">
-                    <p>我的订单</p>
-                    <p>></p>
-                </a>
-                <a href="#">
-                    <img src="http://img61.ddimg.cn/upload_img/00528/000/vip-1521514865.png" alt="">
-                    <p>我的订单</p>
-                    <p>></p>
-                </a>
-                <a href="#">
-                    <img src="http://img61.ddimg.cn/upload_img/00528/000/vip-1521514865.png" alt="">
-                    <p>我的订单</p>
-                    <p>></p>
-                </a>
+                </h6>
             </div>
         </div>
   </div>
@@ -115,7 +70,53 @@
 
 <script>
 export default {
-    name:"Mine"
+    name:"Mine",
+    data(){
+        return{
+            mine:[
+                {
+                    name:"会员中心",
+                    image:"http://img61.ddimg.cn/upload_img/00528/000/vip-1521514865.png"
+                },
+                {
+                    name:"我的礼券",
+                    image:"http://img62.ddimg.cn/upload_img/00487/11111/wd-012-02.png"
+                },
+                {
+                    name:"积分抵现",
+                    image:"http://img60.ddimg.cn/upload_img/00487/11111/wd-012-03.png"
+                },
+                {
+                    name:"我的电子书",
+                    image:"http://img62.ddimg.cn/upload_img/00528/1234/111.png"
+                },
+                {
+                    name:"我的礼品卡",
+                    image:"http://img61.ddimg.cn/upload_img/00487/11111/wd-012-04.png"
+                },
+                {
+                    name:"收货地址",
+                    image:"http://img63.ddimg.cn/upload_img/00487/11111/wd-012-05.png"
+                },
+                {
+                    name:"ceocs冬季特卖，2双3折",
+                    image:"http://img60.ddimg.cn/upload_img/00538/1/qiang-icon-2017-muying.jpg"
+                },
+                {
+                    name:"逻辑狗每满300减40",
+                    image:"http://img60.ddimg.cn/upload_img/00538/1/qiang-icon-2017-muying.jpg"
+                },
+                {
+                    name:"诗意阅读，30万图书每满150减50",
+                    image:"http://img60.ddimg.cn/upload_img/00538/1/qiang-icon-2017-muying.jpg"
+                },
+                {
+                    name:"客服反馈",
+                    image:"http://img60.ddimg.cn/upload_img/00487/11111/wd-012-07.png"
+                }
+            ]
+        }
+    }
 }
 </script>
 
@@ -149,7 +150,7 @@ export default {
             height: 100%;
         }
 
-        .mydd_section-basic a {
+        .mydd_section-basic span {
             position: absolute;
             left: 0;
             top: 0;
@@ -240,38 +241,39 @@ export default {
             height: .383rem;
         }
 
-        .mydd_section-vip a {
+        .mydd_section-vip h6 {
             height: .383rem;
             padding: 0 .083rem;
             display: flex;
             border-bottom: 1px solid #eee;
+            font-weight: 100;
         }
 
-        .mydd_section-vip a:nth-child(1) {
+        .mydd_section-vip h6:nth-child(1) {
             border-bottom: .083rem solid #eee;
         }
 
-        .mydd_section-vip a:nth-child(6) {
+        .mydd_section-vip h6:nth-child(6) {
             border-bottom: .083rem solid #eee;
         }
 
-        .mydd_section-vip a:nth-child(9) {
+        .mydd_section-vip h6:nth-child(9) {
             border-bottom: .083rem solid #eee;
         }
 
-        .mydd_section-vip a img {
+        .mydd_section-vip h6 img {
             width: .183rem;
             height: .183rem;
             padding-right: .042rem;
             padding-top: .092rem;
         }
 
-        .mydd_section-vip a p {
+        .mydd_section-vip h6 p {
             line-height: .383rem;
             color: #999;
         }
 
-        .mydd_section-vip a p:nth-child(2) {
+        .mydd_section-vip h6 p:nth-child(2) {
             flex: 1;
             color: #4d525d
         }
