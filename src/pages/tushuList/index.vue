@@ -1,12 +1,14 @@
 <template>
   <div class="tushuList page">
-    <Header title="图书畅销榜" />
+    <Header :title="tit" icon/>
     <!-- list_section -->
     <div class="list_section">
       <div class="list_nav">
         <ul>
           <router-link v-for="(item,index) in list" 
-          :key="index" tag="li" :to="'/tushuList/tushuLists/'+item.id">{{item.title}}</router-link>
+          :key="index" tag="li" 
+          :to="'/tushuList/tushuLists/'+item.id+'/'+item.title"
+          >{{item.title}}</router-link>
         </ul>
       </div>
 
@@ -19,7 +21,7 @@
         <p>成功/励志</p>
       </div>
 
-      <router-view></router-view>
+      <router-view @handleLists="handleL"></router-view>
     </div>
   </div>
 </template>
@@ -58,9 +60,15 @@ export default {
                   title:"飙升榜",
                   id:7
               }
-          ]
+          ],
+          tit:"新书热卖榜"
       }
-  }
+  },
+    methods:{
+        handleL(params){
+            this.tit = params;
+        }
+    }
 };
 </script>
 
@@ -124,7 +132,9 @@ export default {
   width: 4.358rem;
   height: 100%;
 }
-
+.list_nav ul .router-link-active{
+  color:#c33;
+}
 .list_nav ul li {
   float: left;
   padding: 0 10px;

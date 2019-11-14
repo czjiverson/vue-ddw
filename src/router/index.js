@@ -79,10 +79,10 @@ const router=new VueRouter({
             children:[
                 {
                     path:"/tushuList",
-                    redirect:"/tushuList/tushuLists/1"
+                    redirect:"/tushuList/tushuLists/1/新书热卖榜"
                 },
                 {
-                    path:"/tushuList/tushuLists/:id",
+                    path:"/tushuList/tushuLists/:id/:title",
                     component:_=>import("@components/tushuList"),
                     name:"tushuLists",
                     meta:{

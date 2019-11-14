@@ -1,7 +1,7 @@
 const Mock = require("mockjs")
 
 const data = Mock.mock({
-    "data|200":[
+    "data|500":[
         {
             "id|+1":1,
             "username1":"@cname",
@@ -16,4 +16,22 @@ const data = Mock.mock({
     ]
 })
 
-export default data;
+Mock.mock(/\/tushu\/list/,"post",(options)=>{
+    let {num}=JSON.parse(options.body);
+
+    var obj = {
+        code: 200,
+        errMsg: "",
+        data: {
+            list: []
+        }
+    }
+
+
+    for (var i = num*20; i < num*20+20; i++) {
+        obj.data.list.push(data.data[i]);
+    }
+
+    return obj;
+
+})
