@@ -7,11 +7,7 @@
             <div class="mydd_section-info">
                 <div class="mydd_section-basic">
                     <img src="http://img61.ddimg.cn/upload_img/00610/home/user-bg.jpg" alt="">
-<<<<<<< HEAD
                     <router-link tag="span" to="/login">登录/注册</router-link>
-=======
-                    <a href="#">登录/注册</a>
->>>>>>> mao
                 </div>
                 <div class="mydd_section-stat">
                     <a href="#">
@@ -62,64 +58,11 @@
 
             <!-- mydd_section-vip -->
             <div class="mydd_section-vip">
-<<<<<<< HEAD
                 <h6 v-for="(item,index) in mine" :key="index">
                     <img :src="item.image" alt="">
                     <p>{{item.name}}</p>
                     <p>></p>
                 </h6>
-=======
-                <a href="#">
-                    <img src="http://img61.ddimg.cn/upload_img/00528/000/vip-1521514865.png" alt="">
-                    <p>我的订单</p>
-                    <p>></p>
-                </a>
-                <a href="#">
-                    <img src="http://img61.ddimg.cn/upload_img/00528/000/vip-1521514865.png" alt="">
-                    <p>我的订单</p>
-                    <p>></p>
-                </a>
-                <a href="#">
-                    <img src="http://img61.ddimg.cn/upload_img/00528/000/vip-1521514865.png" alt="">
-                    <p>我的订单</p>
-                    <p>></p>
-                </a>
-                <a href="#">
-                    <img src="http://img61.ddimg.cn/upload_img/00528/000/vip-1521514865.png" alt="">
-                    <p>我的订单</p>
-                    <p>></p>
-                </a>
-                <a href="#">
-                    <img src="http://img61.ddimg.cn/upload_img/00528/000/vip-1521514865.png" alt="">
-                    <p>我的订单</p>
-                    <p>></p>
-                </a>
-                <a href="#">
-                    <img src="http://img61.ddimg.cn/upload_img/00528/000/vip-1521514865.png" alt="">
-                    <p>我的订单</p>
-                    <p>></p>
-                </a>
-                <a href="#">
-                    <img src="http://img61.ddimg.cn/upload_img/00528/000/vip-1521514865.png" alt="">
-                    <p>我的订单</p>
-                    <p>></p>
-                </a>
-                <a href="#">
-                    <img src="http://img61.ddimg.cn/upload_img/00528/000/vip-1521514865.png" alt="">
-                    <p>我的订单</p>
-                    <p>></p>
-                </a>
-                <a href="#">
-                    <img src="http://img61.ddimg.cn/upload_img/00528/000/vip-1521514865.png" alt="">
-                    <p>我的订单</p>
-                    <p>></p>
-                </a>
-                <a href="#">
-                    <img src="http://img61.ddimg.cn/upload_img/00528/000/vip-1521514865.png" alt="">
-                    <p>我的订单</p>
-                    <p>></p>
-                </a>
->>>>>>> mao
             </div>
         </div>
   </div>
@@ -127,7 +70,6 @@
 
 <script>
 export default {
-<<<<<<< HEAD
     name:"Mine",
     data(){
         return{
@@ -175,9 +117,6 @@ export default {
             ]
         }
     }
-=======
-    name:"Mine"
->>>>>>> mao
 }
 </script>
 
@@ -211,11 +150,7 @@ export default {
             height: 100%;
         }
 
-<<<<<<< HEAD
         .mydd_section-basic span {
-=======
-        .mydd_section-basic a {
->>>>>>> mao
             position: absolute;
             left: 0;
             top: 0;
@@ -306,16 +241,11 @@ export default {
             height: .383rem;
         }
 
-<<<<<<< HEAD
         .mydd_section-vip h6 {
-=======
-        .mydd_section-vip a {
->>>>>>> mao
             height: .383rem;
             padding: 0 .083rem;
             display: flex;
             border-bottom: 1px solid #eee;
-<<<<<<< HEAD
             font-weight: 100;
         }
 
@@ -332,43 +262,18 @@ export default {
         }
 
         .mydd_section-vip h6 img {
-=======
-        }
-
-        .mydd_section-vip a:nth-child(1) {
-            border-bottom: .083rem solid #eee;
-        }
-
-        .mydd_section-vip a:nth-child(6) {
-            border-bottom: .083rem solid #eee;
-        }
-
-        .mydd_section-vip a:nth-child(9) {
-            border-bottom: .083rem solid #eee;
-        }
-
-        .mydd_section-vip a img {
->>>>>>> mao
             width: .183rem;
             height: .183rem;
             padding-right: .042rem;
             padding-top: .092rem;
         }
 
-<<<<<<< HEAD
         .mydd_section-vip h6 p {
-=======
-        .mydd_section-vip a p {
->>>>>>> mao
             line-height: .383rem;
             color: #999;
         }
 
-<<<<<<< HEAD
         .mydd_section-vip h6 p:nth-child(2) {
-=======
-        .mydd_section-vip a p:nth-child(2) {
->>>>>>> mao
             flex: 1;
             color: #4d525d
         }

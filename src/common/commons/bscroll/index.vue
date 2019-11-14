@@ -15,41 +15,28 @@ export default {
   name: "Bscroll",
   data(){
       return {
-<<<<<<< HEAD
           flag:false,
           pullingDown:false
-=======
-          flag:false
->>>>>>> mao
       }
   },
   mounted() {
     this.scroll = new BScroll(this.$refs.wrapper, {
       probeType: 1,
-<<<<<<< HEAD
       pullDownRefresh:{
         threshold:40,
         stop:30
       },
       pullUpLoad:true
-=======
-      pullDownRefresh:true
->>>>>>> mao
     });
   },
   methods: {
     handleScroll() {
       this.scroll.on("scroll", pro => {
-<<<<<<< HEAD
         if (pro.y > 40 && !(this.pullingDown)) {
-=======
-        if (pro.y > 30) {
->>>>>>> mao
           this.flag=true;
         }
       });
     },
-<<<<<<< HEAD
     handlepullingDown(callback){
         this.scroll.on("pullingDown",()=>{
             this.pullingDown=true;
@@ -80,12 +67,6 @@ export default {
       //   this.flag=false;
         this.pullingDown=false;
       // },1500)
-=======
-    handlepullingDown(){
-        this.scroll.on("pullingDown",()=>{
-            console.log(1111)
-        })
->>>>>>> mao
     }
   }
 };

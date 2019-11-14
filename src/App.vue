@@ -1,10 +1,6 @@
 <template>
   <div id="app">
-<<<<<<< HEAD
     <keep-alive exclude="/tushuLists/">
-=======
-    <keep-alive>
->>>>>>> mao
       <router-view></router-view>
     </keep-alive>
   <Footer v-if="$route.meta.flag"/>
@@ -13,21 +9,12 @@
 
 <script>
 import Footer from "@common/commons/tabBar"
-<<<<<<< HEAD
-=======
-
->>>>>>> mao
 export default {
   name:"App",
   components:{
     Footer
-<<<<<<< HEAD
   }
 };
-=======
-  },
-}
->>>>>>> mao
 </script>
 
 <style>

@@ -6,60 +6,8 @@
       <div class="buy_section-nav">
         <ul>
           <li>
-<<<<<<< HEAD
-            <a href="#">
-              <img src="https://img61.ddimg.cn/2018/8/25/20180825153505715.png" alt />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="https://img61.ddimg.cn/2018/8/25/20180825153505715.png" alt />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="https://img61.ddimg.cn/2018/8/25/20180825153505715.png" alt />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="https://img61.ddimg.cn/2018/8/25/20180825153505715.png" alt />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="https://img61.ddimg.cn/2018/8/25/20180825153505715.png" alt />
-            </a>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a href="#">
-              <img src="https://img61.ddimg.cn/2018/8/25/20180825153505715.png" alt />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="https://img61.ddimg.cn/2018/8/25/20180825153505715.png" alt />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="https://img61.ddimg.cn/2018/8/25/20180825153505715.png" alt />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="https://img61.ddimg.cn/2018/8/25/20180825153505715.png" alt />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="https://img61.ddimg.cn/2018/8/25/20180825153505715.png" alt />
-=======
             <a href="#" v-for="(item,index) in arr" :key="index">
               <img :src="item.image" alt />
->>>>>>> mao
             </a>
           </li>
         </ul>
@@ -70,32 +18,6 @@
         <h1>促销专场</h1>
         <a href="#">更多></a>
         <div class="buy_section-list1">
-<<<<<<< HEAD
-          <a href="#">
-            <p>店庆遇上双11-玩具2件5折</p>
-            <img src="http://img3m0.ddimg.cn/71/23/25278830-1_b_6.jpg" alt />
-          </a>
-          <a href="#">
-            <p>店庆遇上双11-玩具2件5折</p>
-            <img src="http://img3m0.ddimg.cn/71/23/25278830-1_b_6.jpg" alt />
-          </a>
-          <a href="#">
-            <p>店庆遇上双11-玩具2件5折</p>
-            <img src="http://img3m0.ddimg.cn/71/23/25278830-1_b_6.jpg" alt />
-          </a>
-          <a href="#">
-            <p>店庆遇上双11-玩具2件5折</p>
-            <img src="http://img3m0.ddimg.cn/71/23/25278830-1_b_6.jpg" alt />
-          </a>
-          <a href="#">
-            <p>店庆遇上双11-玩具2件5折</p>
-            <img src="http://img3m0.ddimg.cn/71/23/25278830-1_b_6.jpg" alt />
-          </a>
-          <a href="#">
-            <p>店庆遇上双11-玩具2件5折</p>
-            <img src="http://img3m0.ddimg.cn/71/23/25278830-1_b_6.jpg" alt />
-          </a>
-=======
           <a href="#" v-for="(item,index) in buyList" :key="index">
             <p>{{item.title}}
               <br>
@@ -104,7 +26,6 @@
             <img :src="item.imgUrl" alt />
           </a>
           
->>>>>>> mao
         </div>
       </div>
 
@@ -115,81 +36,17 @@
         <div class="buy_section-list2">
           <ul>
             <li>
-<<<<<<< HEAD
-              <a href="#">
-                <img src="http://img3m9.ddimg.cn/38/12/1542778319-1_h_1.jpg" alt />
-                <p>1元秒杀，限量抢购，抢完即止！</p>
-                <i>
-                  <span>
-                    <span>￥</span>1.00
-                  </span>
-                  <br />
-                  <span>
-                    <del>
-                      <span>￥</span>1234.00
-                    </del>
-                  </span>
-                </i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="http://img3m9.ddimg.cn/38/12/1542778319-1_h_1.jpg" alt />
-                <p>1元秒杀，限量抢购，抢完即止！</p>
-                <i>
-                  <span>
-                    <span>￥</span>1.00
-                  </span>
-                  <br />
-                  <span>
-                    <del>
-                      <span>￥</span>1234.00
-                    </del>
-                  </span>
-                </i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="http://img3m9.ddimg.cn/38/12/1542778319-1_h_1.jpg" alt />
-                <p>1元秒杀，限量抢购，抢完即止！</p>
-                <i>
-                  <span>
-                    <span>￥</span>1.00
-=======
               <a href="#" v-for="(item,index) in buyListe" :key="index">
                 <img :src="item.imgUrl" alt />
                 <p>{{item.txt}}</p>
                 <i>
                   <span>
                     <span>￥{{item.Newnumber}}</span>
->>>>>>> mao
                   </span>
                   <br />
                   <span>
                     <del>
-<<<<<<< HEAD
-                      <span>￥</span>1234.00
-                    </del>
-                  </span>
-                </i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="http://img3m9.ddimg.cn/38/12/1542778319-1_h_1.jpg" alt />
-                <p>1元秒杀，限量抢购，抢完即止！</p>
-                <i>
-                  <span>
-                    <span>￥</span>1.00
-                  </span>
-                  <br />
-                  <span>
-                    <del>
-                      <span>￥</span>1234.00
-=======
                       <span>￥{{item.Oldnumber}}</span>
->>>>>>> mao
                     </del>
                   </span>
                 </i>
@@ -203,11 +60,6 @@
 </template>
 
 <script>
-<<<<<<< HEAD
-export default {
-  name: "Buy"
-};
-=======
 import {buyApi} from "@api/buy"
 export default {
   name: "Buy",
@@ -258,7 +110,6 @@ export default {
   }
 
 };            
->>>>>>> mao
 </script>
 
 <style>
@@ -274,17 +125,10 @@ export default {
 /* buy_section-nav */
 .buy_section-nav {
   display: flex;
-<<<<<<< HEAD
-  flex-direction: column;
-}
-
-.buy_section-nav ul {
-=======
   flex-direction: row-reverse;
 }
 
 .buy_section-nav>ul {
->>>>>>> mao
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -293,10 +137,7 @@ export default {
 
 .buy_section-nav ul li img {
   width: 0.625rem;
-<<<<<<< HEAD
-=======
   display: inline-block;
->>>>>>> mao
 }
 
 /* buy_section-box1 */
@@ -344,12 +185,6 @@ export default {
 
 .buy_section-list1 a p {
   width: 92px;
-<<<<<<< HEAD
-  color: #943dff;
-  font-size: 0.117rem;
-  line-height: 0.167rem;
-}
-=======
   color: #000;
   font-size: .1rem;
   line-height: 0.167rem;
@@ -363,17 +198,12 @@ export default {
    display: block;
    text-align: center;
 }
->>>>>>> mao
 
 .buy_section-list1 a img {
   width: 0.617rem;
   height: 0.617rem;
-<<<<<<< HEAD
-  margin-top: 10px;
-=======
   margin-left: .083rem;
   margin-top: .083rem;
->>>>>>> mao
 }
 
 /* buy_section-box2 */
@@ -403,16 +233,6 @@ export default {
 .buy_section-list2 {
   width: 100%;
   height: 1.442rem;
-<<<<<<< HEAD
-}
-
-.buy_section-list2 ul {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  overflow-x: auto;
-=======
   overflow: scroll;
 }
 
@@ -423,7 +243,6 @@ export default {
   flex-direction: row;
   overflow-x: auto;
 
->>>>>>> mao
 }
 
 .buy_section-list2 ul li a {
@@ -433,10 +252,7 @@ export default {
   margin: 0 5px;
   background: #fff;
   border-radius: 0.067rem;
-<<<<<<< HEAD
-=======
   float: left;
->>>>>>> mao
 }
 
 .buy_section-list2 ul li a img {

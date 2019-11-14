@@ -5,9 +5,6 @@ export default {
     meta:{
         flag:true,
         requiredAuth:false
-<<<<<<< HEAD
-    }
-=======
     },
     children:[
         { 
@@ -42,5 +39,4 @@ export default {
         //     }
         // },
     ]
->>>>>>> mao
 }
