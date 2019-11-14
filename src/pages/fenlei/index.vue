@@ -4,82 +4,97 @@
     <div class="classify-box2">
       <nav class="class_nav">
         <ul>
-          <li>图书</li>
-          <li>童书</li>
-          <li>电子书</li>
-          <li>听书</li>
-          <li>网络文学</li>
-          <li>女装</li>
+          <router-link
+            v-for="(item,index) in arr" :key="index"
+            tag="li"
+            :to="'/fenlei/fenleiTuShu/'+index"
+          >
+          {{item}}
+          </router-link>
+           <!-- <router-link
+            tag="li"
+            to="/fenlei/fenleiTongShu"
+          >
+          童书
+          </router-link>
+           <router-link
+            tag="li"
+            to="/fenlei/fenleiDianZiShu"
+          >
+          电子书
+          </router-link> -->
         </ul>
       </nav>
 
+
+      <keep-alive>
+          <router-view></router-view>
+      </keep-alive>
+<!-- 
       <div class="class_div">
         <div class="class_div-one">
           <div class="class_div-over">
             <div class="rr1">
               <img
                 src="http://img63.ddimg.cn/upload_img/00803/1/886x315_wzh_20191107-1573118749.jpg"
-                alt
               />
             </div>
             <div class="rr2">
-              <div class="rr2_one">
+              <div class="rr2_one" v-for="(item,index) in fenleiList" :key="index" >
                 <span class="title1">
-                  <span>进入当当书城</span>
-                  <span>特价低至1.9折</span>
-                </span>
-                <span class="title2">></span>
-              </div>
-              <div class="rr2_one rr2_two">
-                <span class="title1">
-                  <span>进入童书馆</span>
-                  <span>精选少儿读物</span>
+                  <span>{{item.promo_title}}</span>
+                  <span>{{item.promo_text}}</span>
                 </span>
                 <span class="title2">></span>
               </div>
             </div>
-            <div class="bangdan">
-              <h3>榜单</h3>
-              <ul>
-                <li>
-                  <img src="http://img61.ddimg.cn/upload_img/00791/xmj/tu-1568871813.png" alt />
-                  <p>总榜</p>
-                </li>
-                <li>
-                  <img src="http://img61.ddimg.cn/upload_img/00791/xmj/tu-1568871813.png" alt />
-                  <p>总榜</p>
-                </li>
-                <li>
-                  <img src="http://img61.ddimg.cn/upload_img/00791/xmj/tu-1568871813.png" alt />
-                  <p>总榜</p>
-                </li>
-              </ul>
-            </div>
-            <div class="xiaoshuo">
+           
+            <div class="xiaoshuo" v-for="(item,index) in fenleiLists" :key="index">
               <h3>
-                <span>小说></span>
-                <span>畅销榜></span>
+                <span>{{item.group_name}}></span>
+                <span>{{item.more}}></span>
               </h3>
-              <ul>
-                <li>社会</li>
-                <li>侦探/悬疑/推理</li>
-                <li>情感</li>
-                <li>世界名著</li>
-                <li>历史</li>
-                <li>下拉</li>
+              <ul >
+                <li v-for="(items,indexs) in item.detail" :key="indexs">  
+                  <img :src="items.icon" alt />
+                  <p>{{items.title}}</p>
+                </li>
               </ul>
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
 
 <script>
-import {fenleiApi} from "@api/fenlei"
+// import {fenleiOneApi} from "@api/fenlei"
 export default {
-  name: "Fenlei"
+  name: "Fenlei",
+  data(){
+    return{
+      // fenleiList:[],
+      // fenleiLists:[],
+      arr:[ "图书","童书","电子书",
+            "听书","网络文学","女装","男装","男女装",
+            "童装童鞋","内衣配饰","母婴玩具","食品新鲜","美妆个护","手机数码",
+            "电脑办公","家用电器","运动户外","珠宝饰品","箱包皮具"
+          ],
+      titler:[],
+      
+    }
+  },
+  // async created(){
+
+  //     let data=await fenleiOneApi();
+  //     console.log(data)
+      // this.titler.push(data.content);
+      // console.log(this.titler)
+      // this.fenleiList=data.content.mini_banner.content;
+      // this.fenleiLists=data.content.pile[0].group;
+      // console.log(this.fenleiLists)
+//   },
 };
 </script>
 
@@ -99,16 +114,24 @@ export default {
   float: left;
   height: 100%;
   z-index: 5;
-  overflow: hidden;
+  position: relative;;
 }
 .class_nav > ul {
-  padding-bottom: 0.367rem;
+  overflow: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.class_nav>ul .router-link-active{
+  background-color: #eff4fa;
 }
 .class_nav > ul > li {
   border: 0.008rem solid transparent;
   border-left: 0.025rem solid transparent;
   border-right-color: #eff4fa;
-  background-color: #eff4fa;
+   /* background-color: #eff4fa; */
   margin: -0.008rem 0;
   padding-right: 0.025rem;
   font-size: 0.117rem;
@@ -119,17 +142,28 @@ export default {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.class_div {
+
+/* .active{
+   
+} */
+/* .class_div {
   width: 78.6%;
   background-color: #eff4fa;
   height: 100%;
   overflow: hidden;
   float: left;
+  position: relative;
 }
 .class_div-one {
   border-left: none;
   background-color: #eff4fa;
   padding: 0 0 0 0.067rem;
+  overflow: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 .class_div-over {
   padding-bottom: 0.4rem;
@@ -195,47 +229,11 @@ export default {
   position: absolute;
   top: 0;
   right: 0;
-  /* background: url(img/4.png) no-repeat center */
   text-align: center;
   line-height: 0.5rem;
 }
 .rr2_two {
   float: right;
-}
-.bangdan {
-  background: white;
-  margin-top: 0.067rem;
-}
-.bangdan > h3 {
-  line-height: 0.15rem;
-  padding-left: 0.117rem;
-  padding-top: 0.058rem;
-  font-size: 0.108rem;
-  color: #4d525d;
-  position: relative;
-  overflow: hidden;
-}
-.bangdan > ul {
-  margin-bottom: 0;
-  padding: 0 0.042rem 0.05rem;
-  overflow: hidden;
-}
-.bangdan > ul > li {
-  width: 0.767rem;
-  float: left;
-  margin-bottom: 0.083rem;
-}
-.bangdan > ul > li > img {
-  display: block;
-  width: 0.567rem;
-  height: 0.567rem;
-  margin-left: 0.083rem;
-}
-.bangdan > ul > li > p {
-  text-align: center;
-  font-size: 0.092rem;
-  color: #4d525d;
-  line-height: 0.45rem;
 }
 .xiaoshuo {
   background: white;
@@ -255,6 +253,8 @@ export default {
   font-weight: 100;
   margin-right: 0.083rem;
   font-size: 0.092rem;
+  width: 0.767rem;
+  margin-bottom: 0.083rem;
 }
 .xiaoshuo > ul {
   margin-bottom: 0;
@@ -262,7 +262,22 @@ export default {
   background: #fff;
   overflow: hidden;
 }
-.xiaoshuo > ul > li {
+.xiaoshuo > ul > li{
+  width: 0.767rem;
+  float: left;
+  margin-bottom: 0.083rem;
+}
+.xiaoshuo > ul > li > img {
+  float: left;
+  display: block;
+  width: 0.567rem;
+  margin-left: 0.083rem;
+}
+.xiaoshuo > ul > li > p {
+  text-align: center;
+  font-size: 0.092rem;
+  color: #4d525d;
+  line-height: 0.45rem;
   float: left;
   display: block;
   width: 0.717rem;
@@ -271,5 +286,5 @@ export default {
   text-align: center;
   line-height: 0.4rem;
   border-bottom: 0.008rem solid #ececec;
-}
+} */
 </style>

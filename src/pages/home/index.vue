@@ -112,6 +112,7 @@ export default {
 .dd_home-section {
   width: 100%;
   overflow: auto;
+
 }
 
 /* section_banners */

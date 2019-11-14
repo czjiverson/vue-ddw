@@ -19,6 +19,7 @@ const router=new VueRouter({
             component:_=>import("@pages/buy"),
             name:"buy",
             meta:{
+                
                 flag:true,
                 requiredAuth:false
             }

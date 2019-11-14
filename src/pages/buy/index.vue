@@ -6,55 +6,8 @@
       <div class="buy_section-nav">
         <ul>
           <li>
-            <a href="#">
-              <img src="https://img61.ddimg.cn/2018/8/25/20180825153505715.png" alt />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="https://img61.ddimg.cn/2018/8/25/20180825153505715.png" alt />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="https://img61.ddimg.cn/2018/8/25/20180825153505715.png" alt />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="https://img61.ddimg.cn/2018/8/25/20180825153505715.png" alt />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="https://img61.ddimg.cn/2018/8/25/20180825153505715.png" alt />
-            </a>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a href="#">
-              <img src="https://img61.ddimg.cn/2018/8/25/20180825153505715.png" alt />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="https://img61.ddimg.cn/2018/8/25/20180825153505715.png" alt />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="https://img61.ddimg.cn/2018/8/25/20180825153505715.png" alt />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="https://img61.ddimg.cn/2018/8/25/20180825153505715.png" alt />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="https://img61.ddimg.cn/2018/8/25/20180825153505715.png" alt />
+            <a href="#" v-for="(item,index) in arr" :key="index">
+              <img :src="item.image" alt />
             </a>
           </li>
         </ul>
@@ -65,30 +18,14 @@
         <h1>促销专场</h1>
         <a href="#">更多></a>
         <div class="buy_section-list1">
-          <a href="#">
-            <p>店庆遇上双11-玩具2件5折</p>
-            <img src="http://img3m0.ddimg.cn/71/23/25278830-1_b_6.jpg" alt />
+          <a href="#" v-for="(item,index) in buyList" :key="index">
+            <p>{{item.title}}
+              <br>
+            <span>{{item.txt}}</span>
+            </p>
+            <img :src="item.imgUrl" alt />
           </a>
-          <a href="#">
-            <p>店庆遇上双11-玩具2件5折</p>
-            <img src="http://img3m0.ddimg.cn/71/23/25278830-1_b_6.jpg" alt />
-          </a>
-          <a href="#">
-            <p>店庆遇上双11-玩具2件5折</p>
-            <img src="http://img3m0.ddimg.cn/71/23/25278830-1_b_6.jpg" alt />
-          </a>
-          <a href="#">
-            <p>店庆遇上双11-玩具2件5折</p>
-            <img src="http://img3m0.ddimg.cn/71/23/25278830-1_b_6.jpg" alt />
-          </a>
-          <a href="#">
-            <p>店庆遇上双11-玩具2件5折</p>
-            <img src="http://img3m0.ddimg.cn/71/23/25278830-1_b_6.jpg" alt />
-          </a>
-          <a href="#">
-            <p>店庆遇上双11-玩具2件5折</p>
-            <img src="http://img3m0.ddimg.cn/71/23/25278830-1_b_6.jpg" alt />
-          </a>
+          
         </div>
       </div>
 
@@ -99,68 +36,17 @@
         <div class="buy_section-list2">
           <ul>
             <li>
-              <a href="#">
-                <img src="http://img3m9.ddimg.cn/38/12/1542778319-1_h_1.jpg" alt />
-                <p>1元秒杀，限量抢购，抢完即止！</p>
+              <a href="#" v-for="(item,index) in buyListe" :key="index">
+                <img :src="item.imgUrl" alt />
+                <p>{{item.txt}}</p>
                 <i>
                   <span>
-                    <span>￥</span>1.00
+                    <span>￥{{item.Newnumber}}</span>
                   </span>
                   <br />
                   <span>
                     <del>
-                      <span>￥</span>1234.00
-                    </del>
-                  </span>
-                </i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="http://img3m9.ddimg.cn/38/12/1542778319-1_h_1.jpg" alt />
-                <p>1元秒杀，限量抢购，抢完即止！</p>
-                <i>
-                  <span>
-                    <span>￥</span>1.00
-                  </span>
-                  <br />
-                  <span>
-                    <del>
-                      <span>￥</span>1234.00
-                    </del>
-                  </span>
-                </i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="http://img3m9.ddimg.cn/38/12/1542778319-1_h_1.jpg" alt />
-                <p>1元秒杀，限量抢购，抢完即止！</p>
-                <i>
-                  <span>
-                    <span>￥</span>1.00
-                  </span>
-                  <br />
-                  <span>
-                    <del>
-                      <span>￥</span>1234.00
-                    </del>
-                  </span>
-                </i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img src="http://img3m9.ddimg.cn/38/12/1542778319-1_h_1.jpg" alt />
-                <p>1元秒杀，限量抢购，抢完即止！</p>
-                <i>
-                  <span>
-                    <span>￥</span>1.00
-                  </span>
-                  <br />
-                  <span>
-                    <del>
-                      <span>￥</span>1234.00
+                      <span>￥{{item.Oldnumber}}</span>
                     </del>
                   </span>
                 </i>
@@ -174,9 +60,56 @@
 </template>
 
 <script>
+import {buyApi} from "@api/buy"
 export default {
-  name: "Buy"
-};
+  name: "Buy",
+  data(){
+    return{
+      arr:[
+        {
+          image:"https://img61.ddimg.cn/2018/8/25/20180825153505715.png"
+        },
+         {
+          image:"https://img61.ddimg.cn/2018/8/25/2018082515383576435.png"
+        },
+         {
+          image:"https://img61.ddimg.cn/2018/8/25/2018082515395286917.png"
+        },
+         {
+          image:"https://img63.ddimg.cn/2018/8/31/2018083116044590576.png"
+        },
+         {
+          image:"http://img63.ddimg.cn/upload_img/00660/h5/ddpp-1537350824.png"
+        },
+         {
+          image:"https://img62.ddimg.cn/2018/8/31/2018083116363087335.png"
+        },
+         {
+          image:"https://img62.ddimg.cn/2018/8/31/2018083116355544875.png"
+        },
+         {
+          image:"https://img61.ddimg.cn/2018/8/31/2018083116365438226.png"
+        },
+         {
+          image:"https://img62.ddimg.cn/2018/8/31/2018083116373380162.png"
+        },
+         {
+          image:"http://img60.ddimg.cn/upload_img/00782/h5/coupon-1537505152.png"
+        },
+      ],
+      buyList:[],
+      buyListe:[]
+    }
+  },
+  async created(){
+    let date=await buyApi();
+    
+    this.buyList=date.infos1;
+    this.buyListe=date.infos2;
+    console.log(this.buyListe)
+  }
+
+};            
 </script>
 
 <style>
@@ -192,10 +125,10 @@ export default {
 /* buy_section-nav */
 .buy_section-nav {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
 }
 
-.buy_section-nav ul {
+.buy_section-nav>ul {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -204,6 +137,7 @@ export default {
 
 .buy_section-nav ul li img {
   width: 0.625rem;
+  display: inline-block;
 }
 
 /* buy_section-box1 */
@@ -251,15 +185,25 @@ export default {
 
 .buy_section-list1 a p {
   width: 92px;
-  color: #943dff;
-  font-size: 0.117rem;
+  color: #000;
+  font-size: .1rem;
   line-height: 0.167rem;
+}
+.buy_section-list1 a p span{
+   color: #943dff;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   width: .75rem;
+   display: block;
+   text-align: center;
 }
 
 .buy_section-list1 a img {
   width: 0.617rem;
   height: 0.617rem;
-  margin-top: 10px;
+  margin-left: .083rem;
+  margin-top: .083rem;
 }
 
 /* buy_section-box2 */
@@ -289,14 +233,16 @@ export default {
 .buy_section-list2 {
   width: 100%;
   height: 1.442rem;
+  overflow: scroll;
 }
 
 .buy_section-list2 ul {
-  width: 100%;
-  height: 100%;
+  width: 8.167rem;
+  height: 1.442rem;
   display: flex;
   flex-direction: row;
   overflow-x: auto;
+
 }
 
 .buy_section-list2 ul li a {
@@ -306,6 +252,7 @@ export default {
   margin: 0 5px;
   background: #fff;
   border-radius: 0.067rem;
+  float: left;
 }
 
 .buy_section-list2 ul li a img {

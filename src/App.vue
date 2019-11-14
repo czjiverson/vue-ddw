@@ -9,12 +9,13 @@
 
 <script>
 import Footer from "@common/commons/tabBar"
+
 export default {
   name:"App",
   components:{
     Footer
-  }
-};
+  },
+}
 </script>
 
 <style>

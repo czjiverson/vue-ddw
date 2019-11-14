@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from "./router"
 import VueTouch from "vue-touch"
+import "./mock"
 import "@common/commons"
 
 
