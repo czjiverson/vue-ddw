@@ -19,6 +19,10 @@ const router=new VueRouter({
             component:_=>import("@pages/buy"),
             name:"buy",
             meta:{
+<<<<<<< HEAD
+=======
+                
+>>>>>>> mao
                 flag:true,
                 requiredAuth:false
             }
@@ -67,6 +71,7 @@ const router=new VueRouter({
                 flag:false,
                 requiredAuth:false
             }
+<<<<<<< HEAD
         },
         {
             path:"/tushuList",
@@ -91,6 +96,8 @@ const router=new VueRouter({
                     }
                 }
             ]
+=======
+>>>>>>> mao
         }
     ]
 })

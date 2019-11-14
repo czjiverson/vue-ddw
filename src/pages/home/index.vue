@@ -1,5 +1,6 @@
 <template>
   <div class="dd_home page">
+<<<<<<< HEAD
     <Header title="当当网" />
 
     <!-- section -->
@@ -62,6 +63,51 @@
         <router-view></router-view>
       </keep-alive>
     </div>
+=======
+    <Header title="首页" />
+    <Bscroll ref="scroll">
+      <!-- section -->
+      <div class="dd_home-section">
+        <div>
+          <!-- section_banners -->
+          <div class="section_banners">
+            <img
+              src="http://img61.ddimg.cn/upload_img/00785/ts1108_1111/1242x366_dl_1106-1573120161.jpg"
+              alt
+            />
+          </div>
+
+          <!-- section_nav -->
+          <div class="section_nav">
+            <ul v-for="(item,index) in images" :key="index">
+              <li v-for="(image,index) in item" :key="index">
+                <img :src="image.img" alt />
+              </li>
+            </ul>
+          </div>
+
+          <!-- home_nav2 -->
+          <div class="home_nav2">
+            <div class="home_nav2_city">
+              <router-link tag="span" to="/city">北京</router-link>
+              <i></i>
+            </div>
+            <ul class="home_nav2_switch">
+              <router-link tag="li" to="/home/homeLeft">正在热映</router-link>
+              <router-link tag="li" to="/home/homeRight">即将上映</router-link>
+            </ul>
+            <div class="home_nav2_search">
+              <router-link class="iconfont" tag="i" to="/search">&#xe613;</router-link>
+            </div>
+          </div>
+
+          <keep-alive>
+            <router-view></router-view>
+          </keep-alive>
+        </div>
+      </div>
+    </Bscroll>
+>>>>>>> mao
   </div>
 </template>
 
@@ -74,6 +120,7 @@ export default {
         [
           {
             img:
+<<<<<<< HEAD
               "http://img61.ddimg.cn/upload_img/00803/1/chagnxiao-1562827477.png",
             path: "/tushuList"
           },
@@ -96,10 +143,30 @@ export default {
             img:
               "http://img62.ddimg.cn/upload_img/00705/B/icon-5.28-1559032809.png",
             path: "/tushuList"
+=======
+              "http://img61.ddimg.cn/upload_img/00803/1/chagnxiao-1562827477.png"
+          },
+          {
+            img:
+              "http://img61.ddimg.cn/upload_img/00796/1/xinshu-1563173497.png"
+          },
+          {
+            img:
+              "http://img62.ddimg.cn/upload_img/00702/B/SY-iCON-3-5.10-1557488951.png"
+          },
+          {
+            img:
+              "http://img60.ddimg.cn/upload_img/00702/T/icon-cx-1559818801.png"
+          },
+          {
+            img:
+              "http://img62.ddimg.cn/upload_img/00705/B/icon-5.28-1559032809.png"
+>>>>>>> mao
           }
         ],
         [
           {
+<<<<<<< HEAD
             img: "http://img50.ddimg.cn/116550067538580_y.jpg",
             path: "/tushuList"
           },
@@ -122,10 +189,36 @@ export default {
             img:
               "http://img63.ddimg.cn/upload_img/00528/0000/12311-1556245256.jpg",
             path: "/tushuList"
+=======
+            img: "http://img50.ddimg.cn/116550067538580_y.jpg"
+          },
+          {
+            img:
+              "http://img63.ddimg.cn/upload_img/00528/000/7chaoshi-1545121233.png"
+          },
+          {
+            img:
+              "http://img61.ddimg.cn/upload_img/00528/000/00000-1564393723.png"
+          },
+          {
+            img:
+              "http://img62.ddimg.cn/upload_img/00528/000/9zhongxin-1545121233.png"
+          },
+          {
+            img:
+              "http://img63.ddimg.cn/upload_img/00528/0000/12311-1556245256.jpg"
+>>>>>>> mao
           }
         ]
       ]
     };
+<<<<<<< HEAD
+=======
+  },
+  mounted(){
+    this.$refs.scroll.handleScroll()
+    this.$refs.scroll.handlepullingDown()
+>>>>>>> mao
   }
 };
 </script>
@@ -136,14 +229,20 @@ export default {
 }
 .dd_home-section {
   width: 100%;
+<<<<<<< HEAD
   height: 100%;
   overflow: auto;
+=======
+  overflow: auto;
+
+>>>>>>> mao
 }
 
 /* section_banners */
 .section_banners {
   width: 100%;
   height: 0.917rem;
+<<<<<<< HEAD
   position: relative;
   z-index: 5;
 }
@@ -163,6 +262,23 @@ export default {
   float: left;
 }
 .van-swipe-item img {
+=======
+}
+
+.section_banners img {
+  width: 100%;
+  height: 100%;
+}
+
+/* section_banner */
+.section_banner {
+  width: 100%;
+  height: 1.308rem;
+}
+
+.section_banner img {
+  width: 100%;
+>>>>>>> mao
   height: 100%;
 }
 
@@ -171,8 +287,11 @@ export default {
   display: flex;
   flex-direction: column;
   border-bottom: 0.083rem solid #eee;
+<<<<<<< HEAD
   position: relative;
   z-index: 5;
+=======
+>>>>>>> mao
 }
 
 .section_nav ul {
@@ -193,9 +312,12 @@ export default {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #ccc;
+<<<<<<< HEAD
   position: relative;
   z-index: 5;
   background: #fff;
+=======
+>>>>>>> mao
 }
 
 .home_nav2_city {

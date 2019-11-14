@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div class="search">
     <Header  title="搜索" icon/>
 
@@ -69,10 +70,19 @@ export default {
   created(){
     this.handleTushuList();
   }
+=======
+  <div>bbbb</div>
+</template>
+
+<script>
+export default {
+
+>>>>>>> mao
 }
 </script>
 
 <style>
+<<<<<<< HEAD
 .search {
   position: absolute;
   left: 0;
@@ -222,4 +232,7 @@ export default {
   color: #a0a0a0;
   padding-left: 0.125rem;
 }
+=======
+
+>>>>>>> mao
 </style>

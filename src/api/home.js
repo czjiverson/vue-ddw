@@ -15,7 +15,10 @@ export const homeApi =()=>http({
 
 
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> mao

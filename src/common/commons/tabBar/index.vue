@@ -6,6 +6,10 @@
       :to="item.path" 
       v-for="(item,index) in arr" 
       :key="index"
+<<<<<<< HEAD
+=======
+      
+>>>>>>> mao
       >
         <p class="iconfont" v-html="item.icon"></p>
         <p>{{item.name}}</p>
@@ -89,7 +93,11 @@ export default {
   font-size: 0.067rem;
 }
 
+<<<<<<< HEAD
 .dd_footer ul .router-link-active{
+=======
+.router-link-active{
+>>>>>>> mao
   color:#c33;
 }
 </style>
