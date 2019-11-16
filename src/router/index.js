@@ -97,7 +97,7 @@ const router=new VueRouter({
             path:"/register",
             component:_=>import("@pages/register"),
             name:"register",
-            meta:{
+            meta: {
                 flag:false,
                 requiredAuth:false
             }
