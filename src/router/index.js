@@ -106,7 +106,7 @@ const router=new VueRouter({
             path:"/tiujian",
             component:_=>import("@pages/tiujian"),
             name:"tiujian",
-            meta:{
+            meta: {
                 flag:false,
                 requiredAuth:false
             }
