@@ -106,7 +106,7 @@ export default {
     
     this.buyList=date.infos1;
     this.buyListe=date.infos2;
-    console.log(this.buyListe)
+    // console.log(this.buyListe)
   }
 
 };            

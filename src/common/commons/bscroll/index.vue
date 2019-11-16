@@ -24,9 +24,12 @@ export default {
       probeType: 1,
       pullDownRefresh:{
         threshold:40,
-        stop:30
+        stop:0,
       },
-      pullUpLoad:true
+      pullUpLoad:true,
+      tag:true,
+      click:true,
+
     });
   },
   methods: {

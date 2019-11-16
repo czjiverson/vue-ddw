@@ -1,8 +1,8 @@
 <template>
     <div class="fenleiTuShu">
-        
             <div class="class_div">
                 <div class="class_div-one">
+         <Bscroll ref="scroll">
                 <div class="class_div-over">
                     <div class="rr1">
                     <img
@@ -12,7 +12,7 @@
                     <div class="rr2">
                     <div class="rr2_one" v-for="(item,index) in fenleiList" :key="index" >
                         <span class="title1">
-                        <span>{{item.promo_title}}</span>
+                        <router-link tag="span" to="/tiujian">{{item.promo_title}}</router-link>
                         <span>{{item.promo_text}}</span>
                         </span>
                         <span class="title2">></span>
@@ -32,6 +32,7 @@
                     </ul>
                     </div>
                 </div>
+            </Bscroll>
                 </div>
             </div>
     </div>

@@ -5,6 +5,13 @@ module.exports={
         port:8080,
         open:true,
         proxy:{
+            "/api":{
+                target:"http://product.m.dangdang.com",
+                changeOrigin:true,
+                pathRewrite:{
+                    "^/api":""
+                }
+            },
             "/h5ajax.php":{
                 target:"http://touch.m.dangdang.com",
                 changeOrigin:true
@@ -13,10 +20,8 @@ module.exports={
                 target:"http://search.m.dangdang.com",
                 changeOrigin:true
             },
-            "/h5ajax.php":{
-                target:"http://touch.m.dangdang.com",
-                changeOrigin:true
-            }
+            
+           
         }
     },
     configureWebpack:{
@@ -36,3 +41,5 @@ module.exports={
         }
     }
 }
+
+

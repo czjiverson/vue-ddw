@@ -3,7 +3,10 @@
     <Bscroll ref="scroll">
       <div class="homeright">
         <ul>
-          <li v-for="item in lists" :key="item.id">
+          <router-link v-for="item in lists" :key="item.id"
+            tag="li"
+             :to="'/detailted/'+item.product_id"
+          >
             <img :src="item.image_url" alt />
             <p>{{item.subtitle}}</p>
             <h4>
@@ -11,7 +14,7 @@
               <span>限时抢</span>
             </h4>
             <h5>￥{{item.price}}</h5>
-          </li>
+          </router-link>
         </ul>
       </div>
     </Bscroll>

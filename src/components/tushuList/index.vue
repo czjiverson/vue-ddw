@@ -3,7 +3,10 @@
   <div class="list_lists">
     <Bscroll ref="scroll">
       <ul>
-        <li v-for="(item,index) in lists" :key="index">
+        <router-link v-for="(item,index) in lists" :key="index"
+                      tag="li"
+                      :to="'/datailted/'+index"   
+        >
           <div class="list_img">
             <img :src="item.image" alt />
           </div>
@@ -26,7 +29,7 @@
               <i>{{item.pl}}条评论</i>
             </h5>
           </div>
-        </li>
+        </router-link>
       </ul>
     </Bscroll>
   </div>

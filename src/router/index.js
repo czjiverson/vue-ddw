@@ -92,7 +92,34 @@ const router=new VueRouter({
                     }
                 }
             ]
-        }
+        },
+        {
+            path:"/datailted/:i",
+            component:_=>import("@pages/datailted"),
+            name:"datailted",
+            meta:{
+                flag:false,
+                requiredAuth:false
+            }
+        },
+        {
+            path:"/tiujian",
+            component:_=>import("@pages/tiujian"),
+            name:"tiujian",
+            meta:{
+                flag:false,
+                requiredAuth:false
+            }
+        },
+        {
+            path:"/detailted/:i",
+            component:_=>import("@pages/detailted"),
+            name:"detailted",
+            meta:{
+                flag:false,
+                requiredAuth:false
+            }
+        },
     ]
 })
 
