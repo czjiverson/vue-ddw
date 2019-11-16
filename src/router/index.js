@@ -103,6 +103,15 @@ const router=new VueRouter({
             }
         },
         {
+            path:"/register",
+            component:_=>import("@pages/register"),
+            name:"register",
+            meta:{
+                flag:false,
+                requiredAuth:false
+            }
+        },
+        {
             path:"/tiujian",
             component:_=>import("@pages/tiujian"),
             name:"tiujian",
