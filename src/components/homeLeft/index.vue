@@ -34,7 +34,7 @@ export default {
   methods: {
     async handleHomeLeftList(n) {
       let data = await homeApi();
-      console.log(data)
+      // console.log(data)
       if(!n){
         this.lists=[];
       }

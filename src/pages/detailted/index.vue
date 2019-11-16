@@ -80,7 +80,7 @@ export default {
             
           }
         })
-        console.log(this.content)
+        // console.log(this.content)
       }
     },
      created(){

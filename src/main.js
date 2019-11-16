@@ -7,7 +7,6 @@ import "@common/commons"
 import { Swipe, SwipeItem } from 'vant';
 import "@mock/tushuList"
 import "@mock/buy"
-import "./lib/loading/index.js"
 
 
 
