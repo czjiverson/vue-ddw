@@ -11,19 +11,19 @@
       <div class="login_input">
         <div>
           <p class="iconfont">&#xe66e;</p>
-          <input type="text" placeholder="请输入手机号/邮箱/昵称" />
+          <input type="text" placeholder="请输入手机号/邮箱/昵称" v-model="username"/>
         </div>
         <div>
           <p class="iconfont">&#xe603;</p>
-          <input type="text" placeholder="请输入密码" />
+          <input type="text" placeholder="请输入密码" v-model="pwd"/>
         </div>
       </div>
 
-      <button class="login_btn">登录</button>
+      <v-touch tag="button" class="login_btn" @tap="handleLogin()">登录</v-touch>
 
       <div class="login_wjmm">
         <p>忘记密码？</p>
-        <p>立即注册</p>
+        <router-link tag="p" to="/register">立即注册</router-link>
       </div>
 
       <div class="login_qwz">
@@ -49,8 +49,26 @@
 </template>
 
 <script>
+import {loginApi} from "@api/username"
 export default {
-
+  name:"login",
+  data(){
+    return{
+      username:"",
+      pwd:""
+    }
+  },
+  methods:{
+    async handleLogin(){
+      let data=await loginApi(this.username,this.pwd)
+        if(data.data.status===1){
+            alert(data.data.info);
+            this.$router.push("/mine")
+        }else{
+            alert(data.data.info);
+        }
+    }
+  }
 };
 </script>
 

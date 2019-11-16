@@ -5,11 +5,11 @@ module.exports={
         port:8080,
         open:true,
         proxy:{
-            "/api":{
+            "/apil":{
                 target:"http://product.m.dangdang.com",
                 changeOrigin:true,
                 pathRewrite:{
-                    "^/api":""
+                    "^/apil":""
                 }
             },
             "/h5ajax.php":{
@@ -20,8 +20,18 @@ module.exports={
                 target:"http://search.m.dangdang.com",
                 changeOrigin:true
             },
-            
-           
+            "/api":{
+                target:"http://39.97.33.178",
+                changeOrigin:true
+            },
+            "/users/register":{
+                target:"http://localhost:3000",
+                changeOrigin:true
+            },
+            "/users/login":{
+                target:"http://localhost:3000",
+                changeOrigin:true
+            }
         }
     },
     configureWebpack:{

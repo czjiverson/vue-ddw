@@ -46,7 +46,7 @@
       <!-- home_nav2 -->
       <div class="home_nav2">
         <div class="home_nav2_city">
-          <router-link tag="span" to="/city">北京</router-link>
+          <router-link tag="span" :to="'/city?path='+$route.path">{{this.$store.state.city}}</router-link>
           <i></i>
         </div>
         <ul class="home_nav2_switch">
@@ -199,11 +199,11 @@ export default {
 }
 
 .home_nav2_city {
-  width: 0.333rem;
+  width: .667rem;
   height: 100%;
   font-size: 0.117rem;
   line-height: 0.233rem;
-  padding-left: 0.083rem;
+  text-align: center;
 }
 
 .home_nav2_city i {
@@ -220,6 +220,9 @@ export default {
 .home_nav2_switch {
   display: flex;
 }
+.home_nav2_switch .router-link-active{
+  color:#c33;
+}
 .home_nav2_switch li {
   line-height: 0.233rem;
   font-size: 0.125rem;
@@ -227,9 +230,10 @@ export default {
 }
 
 .home_nav2_search {
-  width: 0.233rem;
+  width: .667rem;
   height: 100%;
-  text-align: center;
+  text-align: right;
+  padding-right:.042rem;
   line-height: 0.233rem;
 }
 </style>

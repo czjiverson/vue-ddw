@@ -7,7 +7,8 @@
             <div class="mydd_section-info">
                 <div class="mydd_section-basic">
                     <img src="http://img61.ddimg.cn/upload_img/00610/home/user-bg.jpg" alt="">
-                    <router-link tag="span" to="/login">登录/注册</router-link>
+                    <router-link tag="span" v-show="flag1" to="/login">登录/注册</router-link>
+                    <router-link tag="span" v-show="flag2" to="/mine">个人中心</router-link>
                 </div>
                 <div class="mydd_section-stat">
                     <a href="#">
@@ -114,8 +115,23 @@ export default {
                     name:"客服反馈",
                     image:"http://img60.ddimg.cn/upload_img/00487/11111/wd-012-07.png"
                 }
-            ]
+            ],
+            flag1:false,
+            flag2:false
         }
+    },
+    created(){
+        var cookie=document.cookie.split("; ");
+        cookie.forEach(item=>{
+            var _item=item.split("=")
+            if(_item[0]=="token"){
+                this.flag1=false;
+                this.flag2=true;
+            }else{
+                this.flag1=true;
+                this.flag2=false;
+            }
+        })
     }
 }
 </script>

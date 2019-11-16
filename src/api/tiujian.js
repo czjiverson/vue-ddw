@@ -3,7 +3,7 @@ import http from "@utils/request"
 
 export const tuijianApi =()=>http({
     method:"get",
-    url:"/api/h5ajax.php",
+    url:"/apil/h5ajax.php",
     data:{
         action:"book-product-detail",
         is_ab:1,

@@ -70,6 +70,9 @@ export default {
       //   this.flag=false;
         this.pullingDown=false;
       // },1500)
+    },
+    handleScrollTo(offtop){
+      this.scroll.scrollTo(0,offtop,300)
     }
   }
 };
