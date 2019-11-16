@@ -16,6 +16,18 @@ module.exports={
             "/h5ajax.php":{
                 target:"http://touch.m.dangdang.com",
                 changeOrigin:true
+            },
+            "/api":{
+                target:"http://39.97.33.178",
+                changeOrigin:true
+            },
+            "/users/register":{
+                target:"http://localhost:3000",
+                changeOrigin:true
+            },
+            "/users/login":{
+                target:"http://localhost:3000",
+                changeOrigin:true
             }
         }
     },

@@ -24,7 +24,7 @@ export default {
       probeType: 1,
       pullDownRefresh:{
         threshold:40,
-        stop:30
+        stop:0
       },
       pullUpLoad:true
     });
@@ -67,6 +67,9 @@ export default {
       //   this.flag=false;
         this.pullingDown=false;
       // },1500)
+    },
+    handleScrollTo(offtop){
+      this.scroll.scrollTo(0,offtop,300)
     }
   }
 };
