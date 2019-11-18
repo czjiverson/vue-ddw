@@ -1,100 +1,128 @@
 <template>
   <div class="dd_fenlei page">
     <Header title="详情" icon />
-      <section class="section">
-        <div class="play">
-          <a href="#">免费在线读</a>
-          <img :src="content.image_url" alt />
-        </div>
-        <div class="baiwan">
-          <img src="http://img63.ddimg.cn/2019/11/7/2019110710340645284.jpg" class="image" />
-        </div>
-        <div class="introduce">
-          <p>{{content.name}} {{content.author_name}}</p>
-          <div
-            class="jianjie"
-          >{{content.subtitle}}</div>
-          <a href="#">
-            <u>店庆遇上11.11 10万童书 5折封顶>></u>
-          </a>
-          <div class="new_style">
-            <div class="new_style-one">
-              <div class="new_style-left">
-                <b>￥</b>
-                <span>{{Math.floor(content.price/3).toFixed(2)}}</span>
-                <i>((3.90折))</i>
-                <u>降价通知</u>
-              </div>
-              <div class="new_style-right">
-                <del>
-                  定价
-                  <span>￥{{content.price}}</span>
-                </del>
-              </div>
-              <div class="new_style-top">
-                <span>限时抢</span>
-              </div>
+    <section class="section">
+      <div class="play">
+        <a href="#">免费在线读</a>
+        <img :src="content.image_url" alt />
+      </div>
+      <div class="baiwan">
+        <img src="http://img63.ddimg.cn/2019/11/7/2019110710340645284.jpg" class="image" />
+      </div>
+      <div class="introduce">
+        <p>{{content.name}} {{content.author_name}}</p>
+        <div class="jianjie">{{content.subtitle}}</div>
+        <a href="#">
+          <u>店庆遇上11.11 10万童书 5折封顶>></u>
+        </a>
+        <div class="new_style">
+          <div class="new_style-one">
+            <div class="new_style-left">
+              <b>￥</b>
+              <span>{{Math.floor(content.price/3).toFixed(2)}}</span>
+              <i>((3.90折))</i>
+              <u>降价通知</u>
+            </div>
+            <div class="new_style-right">
+              <del>
+                定价
+                <span>￥{{content.price}}</span>
+              </del>
+            </div>
+            <div class="new_style-top">
+              <span>限时抢</span>
             </div>
           </div>
         </div>
-        <div class="discuss">
-          <div class="books">
-            <div class="books_one">
-              <p class="books_one-p1">
-                <span>9.3分</span>
-              </p>
-              <p class="books_one-p2">
-                36732人评分
-                <span>精彩评分送积分</span>
-              </p>
-            </div>
-            <div class="books_two">
-              <span>我要写评论</span>
-            </div>
+      </div>
+      <div class="discuss">
+        <div class="books">
+          <div class="books_one">
+            <p class="books_one-p1">
+              <span>9.3分</span>
+            </p>
+            <p class="books_one-p2">
+              36732人评分
+              <span>精彩评分送积分</span>
+            </p>
+          </div>
+          <div class="books_two">
+            <span>我要写评论</span>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+
+
+    <div class="goodsactive">
+      <Goodsactive :handleGoCart="handleCartList"></Goodsactive>
     </div>
+  </div>
 </template>
 
 
 <script>
-import {detaListApi} from "@api/detailted"
+import { detaListApi } from "@api/detailted";
+import { tuijianApi } from "@api/tiujian";
+import { homeApi } from "@api/home";
 export default {
   name: "detailted",
-    data(){
-        return{
-            i:0,
-            list:[],
-            content:""
+  data() {
+    return {
+      i: 0,
+      list: [],
+      content: "",
+      handleCartList:{}
+    };
+  },
+  methods: {
+    async handleDateList() {
+      this.i = this.$route.params.i;
+      let data = await detaListApi();
+      this.list = data.reco_list;
+      this.list.forEach(item => {
+        if (item.product_id == this.i) {
+          this.content = item;
         }
+      });
+      // console.log(this.list)
     },
-    methods:{
-      async handleDateList(){
-        this.i=this.$route.params.i
-        let data= await detaListApi();
-        this.list=data.reco_list;
-        this.list.forEach(item=>{
-          if(item.product_id==this.i){
-            this.content=item;
-            
-          }
-        })
-        // console.log(this.content)
-      }
+    async handleHomeList() {
+      this.i = this.$route.params.i;
+      let data = await homeApi();
+      this.list = data.reco_list;
+      this.list.forEach(item => {
+        if (item.product_id == this.i) {
+          this.content = item;
+        }
+      });
+      // console.log(this.list)
     },
-     created(){
-       this.handleDateList();
+    async handleDateLists() {
+      this.i = this.$route.params.i;
+      let data = await tuijianApi();
+      this.list = data.reco_list;
+      this.list.forEach(item => {
+        if (item.product_id == this.i) {
+          this.content = item;
+        }
+      });
+    // console.log(this.content);
+    this.handleCartList=this.content;
     }
-}
+  },
+  created() {
+    this.handleDateList();
+    this.handleDateLists();
+    this.handleHomeList();
+  }
+};
 </script>
 
 <style>
 .dd_fenlei {
   padding-top: 0.367rem;
 }
-
-
 
 /* 内容 */
 .section {
@@ -273,5 +301,14 @@ export default {
   padding: 0rem 0.083rem;
   border-radius: 0.1rem;
   margin-right: 0.083rem;
+}
+
+.goodsactive{
+  width:100%;
+  height:.4rem;
+  position: fixed;
+  left:0;
+  bottom:0;
+  background: #ff0;
 }
 </style>

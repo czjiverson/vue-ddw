@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <keep-alive exclude="tushuLists,dateilted,detailted">
+    <keep-alive exclude="tushuLists,dateilted,detailted,Cart">
       <router-view></router-view>
     </keep-alive>
   <Footer v-if="$route.meta.flag"/>

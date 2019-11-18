@@ -20,9 +20,12 @@ module.exports={
                 target:"http://search.m.dangdang.com",
                 changeOrigin:true
             },
-            "/api":{
+            "/city":{
                 target:"http://39.97.33.178",
-                changeOrigin:true
+                changeOrigin:true,
+                pathRewrite:{
+                    "^/city":""
+                }
             },
             "/users/register":{
                 target:"http://localhost:3000",
@@ -31,6 +34,17 @@ module.exports={
             "/users/login":{
                 target:"http://localhost:3000",
                 changeOrigin:true
+            },
+            "/search_ajax.php":{
+                target:"http://search.m.dangdang.com",
+                changeOrigin:true
+            },
+            "/buys":{
+                target:"http://z.dangdang.com",
+                changeOrigin:true,
+                pathRewrite:{
+                    "^/buys":""
+                }
             }
         }
     },

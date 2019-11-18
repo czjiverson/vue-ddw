@@ -12,7 +12,7 @@ class JSLoading{
         document.body.appendChild(this.loadingVm.$mount().$el)
     }
     destroyLoading() {
-        document.body.removeChild(this.loadingVm.$mount().$el)
+        this.loadingVm.$mount().$el.remove()
     }
 }
 

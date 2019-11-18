@@ -7,7 +7,11 @@
         </div>
          <Bscroll ref="scroll">
         <ul class="ul2">
-          <li v-for="(item,index) in list" :key="index">
+          <router-link v-for="(item,index) in list" 
+          :key="index" 
+          tag="li"
+          :to="'/detailted/'+item.product_id"
+          >
             <div>
               <img :src="item.image_url" alt />
             </div>
@@ -19,7 +23,7 @@
             </div>
             <div class="pingjia">￥{{item.price}}</div>
             <div class="ul2_box-four">{{item.shop_id}}人评价</div>
-          </li>
+          </router-link>
           
         </ul>
          </Bscroll>
@@ -40,7 +44,7 @@ export default {
     async created(){
         let date= await tuijianApi();
         this.list=date.reco_list;
-        console.log(this.list)
+        // console.log(this.list)
     }
 };
 </script>

@@ -129,6 +129,15 @@ const router=new VueRouter({
                 requiredAuth:false
             }
         },
+        {
+            path:"/kefu",
+            component:_=>import("@pages/kefu"),
+            name:"kefu",
+            meta:{
+                flag:false,
+                requiredAuth:false
+            }
+        },
     ]
 })
 
