@@ -120,7 +120,7 @@ export default {
       cart.forEach(item => {
         item.flag = true;
       });
-      this.carts = this.cart;
+      this.carts = cart;
     }
     // console.log(this.carts);
 
