@@ -62,6 +62,13 @@
       "unicode_decimal": 58929
     },
     {
+      "icon_id": "1991303",
+      "name": "信息",
+      "font_class": "message",
+      "unicode": "e6cd",
+      "unicode_decimal": 59085
+    },
+    {
       "icon_id": "8765692",
       "name": "包",
       "font_class": "bao",
@@ -74,6 +81,13 @@
       "font_class": "gengduo",
       "unicode": "e86d",
       "unicode_decimal": 59501
+    },
+    {
+      "icon_id": "10721328",
+      "name": "星",
+      "font_class": "xing",
+      "unicode": "e634",
+      "unicode_decimal": 58932
     },
     {
       "icon_id": "11474202",

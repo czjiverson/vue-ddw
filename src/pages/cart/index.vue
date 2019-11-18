@@ -2,136 +2,45 @@
   <div class="dd_cart page">
     <Header title="购物车" icon />
 
-    <div class="section-cart">
-      <div class="r1">
-        <div class="r1_box">
-          <input type="checkbox" />
-          <div class="img"></div>
-          <a href>AGECENTRE旗舰店</a>
-          <span>编辑</span>
-        </div>
+    <div class="section-cart" v-show="flagList">
+      <div class="r1" v-for="(item,index) in carts" :key="index">
         <div class="r2">
-          <input type="checkbox" />
+          <input type="checkbox" :checked="item.flag" @change="handleChangeCk(index)" />
           <a href="#">
-            <img src="http://img3m2.ddimg.cn/32/10/1552768502-1_l_2.jpg" alt />
+            <img :src="item.comment.image_url" alt />
           </a>
           <div class="r2_box">
-            <p>【加绒加厚 多款可选】半高领加绒毛衣打底衫女2019秋冬季女装新款韩版加厚保暖修身小个子内搭针织衫_2278杏色,均码</p>
-            <i>￥58.00</i>
-            <h4>秒杀</h4>
-            <h2>
-              <span>x1</span>
-              <span>2278杏色/均码</span>
-            </h2>
-            <div class="r2_box-one"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="r1">
-        <div class="r1_box">
-          <input type="checkbox" />
-          <div class="img"></div>
-          <a href>AGECENTRE旗舰店</a>
-          <span>编辑</span>
-        </div>
-        <div class="r2">
-          <input type="checkbox" />
-          <a href="#">
-            <img src="http://img3m2.ddimg.cn/32/10/1552768502-1_l_2.jpg" alt />
-          </a>
-          <div class="r2_box">
-            <p>【加绒加厚 多款可选】半高领加绒毛衣打底衫女2019秋冬季女装新款韩版加厚保暖修身小个子内搭针织衫_2278杏色,均码</p>
-            <i>￥58.00</i>
-            <h4>秒杀</h4>
-            <h2>
-              <span>x1</span>
-              <span>2278杏色/均码</span>
-            </h2>
-            <div class="r2_box-one"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="r1">
-        <div class="r1_box">
-          <input type="checkbox" />
-          <div class="img"></div>
-          <a href>AGECENTRE旗舰店</a>
-          <span>编辑</span>
-        </div>
-        <div class="r2">
-          <input type="checkbox" />
-          <a href="#">
-            <img src="http://img3m2.ddimg.cn/32/10/1552768502-1_l_2.jpg" alt />
-          </a>
-          <div class="r2_box">
-            <p>【加绒加厚 多款可选】半高领加绒毛衣打底衫女2019秋冬季女装新款韩版加厚保暖修身小个子内搭针织衫_2278杏色,均码</p>
-            <i>￥58.00</i>
-            <h4>秒杀</h4>
-            <h2>
-              <span>x1</span>
-              <span>2278杏色/均码</span>
-            </h2>
-            <div class="r2_box-one"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="r1">
-        <div class="r1_box">
-          <input type="checkbox" />
-          <div class="img"></div>
-          <a href>AGECENTRE旗舰店</a>
-          <span>编辑</span>
-        </div>
-        <div class="r2">
-          <input type="checkbox" />
-          <a href="#">
-            <img src="http://img3m2.ddimg.cn/32/10/1552768502-1_l_2.jpg" alt />
-          </a>
-          <div class="r2_box">
-            <p>【加绒加厚 多款可选】半高领加绒毛衣打底衫女2019秋冬季女装新款韩版加厚保暖修身小个子内搭针织衫_2278杏色,均码</p>
-            <i>￥58.00</i>
-            <h4>秒杀</h4>
-            <h2>
-              <span>x1</span>
-              <span>2278杏色/均码</span>
-            </h2>
-            <div class="r2_box-one"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="r1">
-        <div class="r1_box">
-          <input type="checkbox" />
-          <div class="img"></div>
-          <a href>AGECENTRE旗舰店</a>
-          <span>编辑</span>
-        </div>
-        <div class="r2">
-          <input type="checkbox" />
-          <a href="#">
-            <img src="http://img3m2.ddimg.cn/32/10/1552768502-1_l_2.jpg" alt />
-          </a>
-          <div class="r2_box">
-            <p>【加绒加厚 多款可选】半高领加绒毛衣打底衫女2019秋冬季女装新款韩版加厚保暖修身小个子内搭针织衫_2278杏色,均码</p>
-            <i>￥58.00</i>
-            <h4>秒杀</h4>
-            <h2>
-              <span>x1</span>
-              <span>2278杏色/均码</span>
-            </h2>
-            <div class="r2_box-one"></div>
+            <p>{{item.comment.name}}</p>
+            <i>
+              ￥{{item.comment.ebook_price*100*item.counter/100||5000*item.counter/100}}
+              <del>￥{{item.comment.price*100*item.counter/100}}</del>
+            </i>
+            <v-touch tag="b" @tap="handleRemove(item.id,index)">X</v-touch>
+            <div class="num">
+              <v-touch tag="p" @tap="handleDel(item.id,item.comment,index)">-</v-touch>
+              <input type="text" :value="item.counter" />
+              <v-touch tag="p" @tap="handleAdd(item.id,item.comment,index)">+</v-touch>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
+    <div class="noCart" v-show="flag">
+      <section class="section">
+        <div class="empty">
+          <p class="desc">您还没有购买任何商品</p>
+          <div class="cart">
+            <router-link tag="span" to="/">逛一逛</router-link>
+            <span>我的收藏</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
     <footer class="footer">
       <div class="f1">
-        <input type="checkbox" />
+        <input type="checkbox" :checked="selectAll" @change="handleChangeAll()" />
         <span>全选</span>
       </div>
       <div class="f2">
@@ -139,8 +48,8 @@
       </div>
       <div class="f3">
         <span>
-          合计：
-          <i>￥ 90.85</i>
+          合计:
+          <i>￥{{allPrice.countP}}</i>
         </span>
       </div>
     </footer>
@@ -148,8 +57,100 @@
 </template>
 
 <script>
+import storage from "@/lib/cart";
 export default {
-  name: "Cart"
+  name: "Cart",
+  data() {
+    return {
+      carts: [],
+      selectAll: true,
+      flag: true,
+      flagList: false
+    };
+  },
+  methods: {
+    handleChangeAll() {
+      this.selectAll = !this.selectAll;
+      this.carts.forEach(item => {
+        item.flag = this.selectAll;
+      });
+    },
+    handleChangeCk(index) {
+      this.carts[index].flag = !this.carts[index].flag;
+      let bstop = true;
+
+      for (var i = 0; i < this.carts.length; i++) {
+        if (!this.carts[i].flag) {
+          bstop = false;
+        }
+      }
+      this.selectAll = bstop;
+    },
+    handleAdd(id, content, index) {
+      // console.log(id, content);
+      storage.push(id, 1, content);
+      for (var i = 0; i < this.carts.length; i++) {
+        if (i === index) {
+          this.carts[i].counter++;
+        }
+      }
+    },
+    handleDel(id, content, index) {
+      if (this.carts[index].counter > 1) {
+        storage.subtract(id, 1, content);
+        for (var i = 0; i < this.carts.length; i++) {
+          if (i === index) {
+            this.carts[i].counter--;
+          }
+        }
+      }
+    },
+    handleRemove(id, index) {
+      storage.remove(id);
+      for (var i = 0; i < this.carts.length; i++) {
+        if (i === index) {
+          this.carts.splice(index, 1);
+        }
+      }
+    }
+  },
+  created() {
+    var cart = JSON.parse(localStorage.getItem("CART"));
+    if (cart) {
+      cart.forEach(item => {
+        item.flag = true;
+      });
+      this.carts = this.cart;
+    }
+    // console.log(this.carts);
+
+    if (this.carts) {
+      this.flag = false;
+      this.flagList = true;
+    } else {
+      this.flag = true;
+      this.flagList = false;
+    }
+  },
+  computed: {
+    allPrice() {
+      let countP = 0;
+      let countNum = 0;
+      for (var i = 0; i < this.carts.length; i++) {
+        if (this.carts[i].flag) {
+          countNum += this.carts[i].counter;
+          countP +=
+            (this.carts[i].comment.ebook_price || 50) * this.carts[i].counter;
+        }
+      }
+      countP = Number(countP).toFixed(2);
+      // console.log(countP)
+      return {
+        countP,
+        countNum
+      };
+    }
+  }
 };
 </script>
 
@@ -170,34 +171,8 @@ export default {
   background: #fff;
   overflow: auto;
   width: 100%;
-}
-.r1_box {
-  height: 0.35rem;
-  overflow: hidden;
-  line-height: 0.35rem;
-}
-.r1_box > input {
-  float: left;
-  margin-left: 0.067rem;
-  margin-top: 0.117rem;
-}
-.r1_box > span {
-  float: right;
-  margin-right: 0.083rem;
-  color: #434343;
-}
-.r1_box > .img {
-  width: 0.2rem;
-  height: 0.2rem;
-  /* background: url("@public/img/6.png"); */
-  float: left;
-  margin-top: 0.083rem;
-  margin-left: 0.083rem;
-  margin-right: 0.083rem;
-}
-.r1_box > a {
-  color: #666;
-  font-size: 0.133rem;
+  padding-top: 0.083rem;
+  padding-bottom: 0.083rem;
 }
 .r2 {
   margin-top: 0.008rem;
@@ -216,8 +191,8 @@ export default {
 .r2_box {
   float: left;
   font-size: 0.1rem;
-  margin-right: 0.083rem;
   margin-left: 0.083rem;
+  width: 1.817rem;
 }
 .r2_box > p {
   float: left;
@@ -235,32 +210,44 @@ export default {
   clear: both;
   float: left;
   font-style: normal;
-  font-size: 0.117rem;
+  font-size: 0.133rem;
   color: #d00;
   margin: 0.05rem 0 6px;
 }
-.r2_box > h4 {
-  clear: both;
-  float: left;
-  color: #fff;
-  font-size: 0.1rem;
-  font-weight: 100;
-  background: #d00;
-  padding: 0.017rem 0.05rem;
-  margin-bottom: 0.033rem;
-}
-.r2_box > h2 {
-  clear: both;
-  float: left;
-  font-weight: 100;
+.r2_box > i > del {
+  padding-left: 0.042rem;
+  color: #ccc;
   font-size: 0.117rem;
 }
-.r2_box-one {
-  width: 0.2rem;
-  height: 0.2rem;
+.r2_box .num {
+  height: 0.208rem;
+  float: left;
+  width: 100%;
+  margin-top: 0.042rem;
+}
+.r2_box .num p {
+  width: 0.192rem;
+  height: 0.192rem;
+  border: 1px solid #ccc;
+  text-align: center;
+  line-height: 0.208rem;
+  float: left;
+}
+.r2_box .num input {
+  width: 0.417rem;
+  height: 0.175rem;
+  border: 1px solid #ccc;
+  border-left: none;
+  border-right: none;
+  float: left;
+  text-align: center;
+}
+.r2_box b {
   float: right;
-  /* background: url("../public/img/7.png"); */
-  margin-bottom: 0.083rem;
+  font-size: 0.133rem;
+  font-weight: 100;
+  padding-top: 0.083rem;
+  padding-right: 0.042rem;
 }
 
 .footer {
@@ -305,5 +292,43 @@ export default {
 }
 .f3 > span > i {
   color: #d00;
+}
+
+.noCart .section {
+  width: 100%;
+  min-height: 100%;
+  overflow: auto;
+  background: #f2f2f2;
+}
+.noCart .empty {
+  width: 100%;
+  padding: 1.75rem 0 180px 0;
+  background: url("http://cart.m.dangdang.com/images/cart_null.gif") center 40px
+    no-repeat;
+  background-size: 1.5rem 1.167rem;
+  border-bottom: solid 0.008rem #ebebeb;
+}
+.noCart .desc {
+  color: #777;
+  font-size: 0.117rem;
+  text-align: center;
+  line-height: 0.167rem;
+}
+.noCart .cart {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.042rem;
+}
+.noCart .cart > span {
+  float: left;
+  font-size: 0.15rem;
+  color: #777;
+  border: 0.008rem solid #777;
+  margin-left: 0.167rem;
+  padding: 0.067rem 0.267rem 0.067rem 0.267rem;
+  border-radius: 0.083rem;
+}
+.noCart .cart > a:nth-of-type(1) {
+  margin-left: 0;
 }
 </style>

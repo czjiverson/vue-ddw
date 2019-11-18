@@ -7,6 +7,12 @@ import "@common/commons"
 import { Swipe, SwipeItem } from 'vant';
 import "@mock/tushuList"
 import "@mock/buy"
+import {
+  GoodsAction,
+  GoodsActionIcon,
+  GoodsActionButton
+} from 'vant';
+import "./lib"
 
 
 
@@ -14,7 +20,9 @@ import "@mock/buy"
 Vue.config.productionTip = false
 Vue.use(VueTouch,{name:"v-touch"})
 Vue.use(Swipe).use(SwipeItem);
-
+Vue.use(GoodsAction)
+Vue.use(GoodsActionIcon)
+Vue.use(GoodsActionButton);
 
 
 new Vue({

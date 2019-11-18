@@ -1,24 +1,25 @@
 <template>
   <div class="tushuList page">
-    <Header :title="tit" icon/>
+    <Header :title="tit" icon />
     <!-- list_section -->
     <div class="list_section">
       <div class="list_nav">
         <ul>
-          <router-link v-for="(item,index) in list" 
-          :key="index" tag="li" 
-          :to="'/tushuList/tushuLists/'+item.id+'/'+item.title"
+          <router-link
+            v-for="(item,index) in list"
+            :key="index"
+            tag="li"
+            :to="'/tushuList/tushuLists/'+item.id+'/'+item.title"
           >{{item.title}}</router-link>
         </ul>
       </div>
 
       <!-- list_navs -->
-      <div class="list_navs">
-        <div></div>
-        <p>总榜</p>
-        <p>童书</p>
-        <p>小说</p>
-        <p>成功/励志</p>
+      <div class="list_navnav">
+        <div class="list_navs" ref="list_navs">
+          <v-touch tag="div" @tap="handleListNavs()"></v-touch>
+          <p v-for="(item,index) in nav" :key="index">{{item}}</p>
+        </div>
       </div>
 
       <router-view @handleLists="handleL"></router-view>
@@ -29,46 +30,82 @@
 <script>
 export default {
   name: "TushuList",
-  data(){
-      return{
-          list:[
-              {
-                  title:"新书热卖榜",
-                  id:1
-              },
-              {
-                  title:"图书畅销榜",
-                  id:2
-              },
-              {
-                  title:"童书新书榜",
-                  id:3
-              },
-              {
-                  title:"童书畅销榜",
-                  id:4
-              },
-              {
-                  title:"热搜榜",
-                  id:5
-              },
-              {
-                  title:"好评榜",
-                  id:6
-              },
-              {
-                  title:"飙升榜",
-                  id:7
-              }
-          ],
-          tit:"新书热卖榜"
-      }
-  },
-    methods:{
-        handleL(params){
-            this.tit = params;
+  data() {
+    return {
+      list: [
+        {
+          title: "新书热卖榜",
+          id: 1
+        },
+        {
+          title: "图书畅销榜",
+          id: 2
+        },
+        {
+          title: "童书新书榜",
+          id: 3
+        },
+        {
+          title: "童书畅销榜",
+          id: 4
+        },
+        {
+          title: "热搜榜",
+          id: 5
+        },
+        {
+          title: "好评榜",
+          id: 6
+        },
+        {
+          title: "飙升榜",
+          id: 7
         }
+      ],
+      tit: "新书热卖榜",
+      nav: [
+        "总榜",
+        "童书",
+        "小说",
+        "成功/励志",
+        "文学",
+        "管理",
+        "青春文学",
+        "艺术",
+        "外语",
+        "历史",
+        "哲学/宗教",
+        "保健/养生",
+        "中小学教辅",
+        "教材",
+        "动漫/幽默",
+        "考试",
+        "法律",
+        "传记",
+        "建筑",
+        "经济",
+        "医学",
+        "文化",
+        "社会科学",
+        "亲子/家教"
+      ],
+      a:""
+    };
+  },
+  methods: {
+    handleL(params) {
+      this.tit = params;
+    },
+    handleListNavs(){
+      if(this.a){
+        this.$refs.list_navs.style.height="0.392rem";
+        this.a=false
+      }else{
+        this.$refs.list_navs.style.height="auto";
+        this.a=true;
+      }
     }
+  }
 };
 </script>
 
@@ -132,8 +169,8 @@ export default {
   width: 4.358rem;
   height: 100%;
 }
-.list_nav ul .router-link-active{
-  color:#c33;
+.list_nav ul .router-link-active {
+  color: #c33;
 }
 .list_nav ul li {
   float: left;
@@ -143,12 +180,21 @@ export default {
 }
 
 /* list_navs */
+.list_navnav{
+  position: relative;
+   height: 0.392rem;
+}
+
+
 .list_navs {
   height: 0.392rem;
   width: 100%;
   box-sizing: border-box;
   padding: 0.06rem 3px 0.06rem 0.06rem;
   border-bottom: 1px solid #ccc;
+  background: #fff;
+  position: absolute;
+  overflow: hidden;
 }
 
 .list_navs p {
@@ -170,11 +216,11 @@ export default {
 .list_navs div {
   width: 0.25rem;
   float: right;
-  height: 100%;
   background: url("http://touch.m.dangdang.com/images/tushubang/arrow_unfolded.png")
     no-repeat center;
   background-size: 0.133rem;
+  position: relative;
+  z-index: 100;
+  height: .263rem;
 }
-
-
 </style>
