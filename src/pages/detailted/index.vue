@@ -107,7 +107,7 @@ export default {
           this.content = item;
         }
       });
-    // console.log(this.content);
+    console.log(this.content);
     this.handleCartList=this.content;
     }
   },

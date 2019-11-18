@@ -71,7 +71,11 @@ export default {
   },
   methods: {
     handleBack() {
-      this.$router.back();
+      if(this.title=="购物车"){
+        this.$router.push("/")
+      }else{
+        this.$router.back();
+      }
     },
     handleChange() {
       this.n = !this.n;
