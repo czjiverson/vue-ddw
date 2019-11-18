@@ -145,8 +145,6 @@ export default {
           this.buyLists.push(date1.result.columns[i])
         }
       }
-      // console.log(this.buyListe)
-      // console.log(this.buyLists)
       for(var i=0;i<4;i++){
         for(var n=i*4;n<i*4+4;n++){
           this.arr1[i].push(this.buyLists[n])
