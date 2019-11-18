@@ -85,7 +85,6 @@ export default {
           this.content = item;
         }
       });
-      // console.log(this.list)
     },
     async handleHomeList() {
       this.i = this.$route.params.i;
@@ -96,7 +95,7 @@ export default {
           this.content = item;
         }
       });
-      // console.log(this.list)
+    this.handleCartList=this.content;
     },
     async handleDateLists() {
       this.i = this.$route.params.i;
@@ -107,14 +106,14 @@ export default {
           this.content = item;
         }
       });
-    console.log(this.content);
-    this.handleCartList=this.content;
+    
     }
   },
   created() {
     this.handleDateList();
     this.handleDateLists();
     this.handleHomeList();
+    
   }
 };
 </script>
