@@ -74,13 +74,14 @@ export default {
         this.i=this.$route.params.i
         let data= await detaListApi();
         this.list=data.reco_list;
+        // console.log(this.list)
         this.list.forEach(item=>{
           if(item.product_id==this.i){
             this.content=item;
             
           }
         })
-        // console.log(this.content)
+        console.log(this.content)
       }
     },
      created(){

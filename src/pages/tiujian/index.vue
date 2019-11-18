@@ -1,17 +1,17 @@
 <template>
   <div class="dd_fenlei page">
     <Header title="推荐" icon />
-      <section class="section-four">
-        <div class="section-four_one">
-          <span>浏览此商品的顾客也同时浏览</span>
-        </div>
-         <Bscroll ref="scroll">
+    <section class="section-four">
+      <div class="section-four_one">
+        <span>浏览此商品的顾客也同时浏览</span>
+      </div>
+      <Bscroll ref="scroll">
         <ul class="ul2">
           <li v-for="(item,index) in list" :key="index">
             <div>
-              <img :src="item.image_url" alt />
+              <img :src="item.image_url" />
             </div>
-            <span>{{item.name}}</span>
+            <span @click="handleClick()">{{item.name}}</span>
             <div class="ul2_box">
               <div class="ul2_box-one">当当自营</div>
               <div class="ul2_box-two">券</div>
@@ -20,28 +20,61 @@
             <div class="pingjia">￥{{item.price}}</div>
             <div class="ul2_box-four">{{item.shop_id}}人评价</div>
           </li>
-          
         </ul>
-         </Bscroll>
-      </section>
-     
+      </Bscroll>
+    </section>
   </div>
 </template>
 
 <script>
-import {tuijianApi} from "@api/tiujian"
+import { tuijianApi } from "@api/tiujian";
 export default {
   name: "tiujian",
-  data(){
-      return{
-          list:[],
-      }
+  data() {
+    return {
+      list: [],
+      num: 1
+    };
   },
-    async created(){
-        let date= await tuijianApi();
-        this.list=date.reco_list;
-        console.log(this.list)
+  created() {
+    this.handleTuiJian();
+  },
+  methods: {
+    async handleTuiJian(id) {
+      let date = await tuijianApi();
+      // this.list = date.reco_list;
+      // console.log(this.list)
+      if (!id) {
+        this.list = [];
+      }
+      for (var i = this.num; i < this.num + 10; i += 2) {
+        this.list.push(date.reco_list[i]);
+      }
+    },
+    handleClick() {
+      console.log(1111);
+      for (let i = 0; i < this.list.length; i++) {
+        localStorage.setItem("jianbei", this.list[i].product_id);
+      }
     }
+  },
+    watch:{
+    list(){
+      this.$refs.scroll.handleRefresh()
+    }
+  },
+  mounted() {
+    this.$refs.scroll.handleScroll();
+    this.$refs.scroll.handlepullingDown(() => {
+      this.num=parseInt(Math.random()*6);
+      this.handleTuiJian()
+    });
+
+    this.$refs.scroll.handlepullingUp(()=>{
+      this.num+=10;
+      this.handleTuiJian(true)
+    })
+  }
 };
 </script>
 

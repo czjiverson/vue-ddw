@@ -54,7 +54,6 @@ export default {
   mounted() {
     this.$refs.scroll.handleScroll();
     this.$refs.scroll.handlepullingDown(() => {
-      var arr=[11,21,31,41,51,61,71]
       this.num=parseInt(Math.random()*7);
       this.handleHomeLeftList()
     });
