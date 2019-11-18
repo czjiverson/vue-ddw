@@ -124,7 +124,7 @@ export default {
     }
     // console.log(this.carts);
 
-    if (this.carts) {
+    if (JSON.parse(localStorage.getItem("CART"))[0]) {
       this.flag = false;
       this.flagList = true;
     } else {

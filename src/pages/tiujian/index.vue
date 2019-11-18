@@ -52,7 +52,7 @@ export default {
       if (!id) {
         this.list = [];
       }
-      for (var i = this.num; i < this.num + 10; i += 2) {
+      for (var i = this.num; i < this.num + 40; i += 2) {
         this.list.push(date.reco_list[i]);
       }
     },
@@ -71,7 +71,7 @@ export default {
   mounted() {
     this.$refs.scroll.handleScroll();
     this.$refs.scroll.handlepullingDown(() => {
-      this.num=parseInt(Math.random()*6);
+      this.num=parseInt(Math.random()*3);
       this.handleTuiJian()
     });
 

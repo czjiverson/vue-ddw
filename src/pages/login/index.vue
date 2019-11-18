@@ -15,7 +15,7 @@
         </div>
         <div>
           <p class="iconfont">&#xe603;</p>
-          <input type="text" placeholder="请输入密码" v-model="pwd"/>
+          <input type="password" placeholder="请输入密码" v-model="pwd"/>
         </div>
       </div>
 
