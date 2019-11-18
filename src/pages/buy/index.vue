@@ -58,24 +58,24 @@
 
         <div class="bangdan" v-for="(items,indexs) in arr1[index]" :key="indexs">
           <div class="bangdan_img">
-            <p>畅销榜第{{items.infos[0].num}}名</p>
-            <img :src="items.infos[0].productImageUrl" alt />
+            <p>畅销榜第{{items.num}}名</p>
+            <img :src="items.productImageUrl" alt />
           </div>
           <div class="bangdan_right">
             <p>更多></p>
-            <p>{{items.infos[0].productName}}</p>
+            <p>{{items.productName}}</p>
             <p>满额减</p>
             <p>
               折后价
-              <span>￥{{items.infos[0].cheapWord || items.infos[0].salePrice}}</span>
+              <span>￥{{items.cheapWord || items.salePrice}}</span>
             </p>
             <p>
-              {{items.infos[0].salePrice}}
-              <del>{{items.infos[0].originPrice}}</del>
+              {{items.salePrice}}
+              <del>{{items.originPrice}}</del>
             </p>
             <p>
-              <span class="iconfont">&#xe6cd;{{items.infos[0].commentCount}}</span>
-              <span class="iconfont">&#xe634;{{items.infos[0].averageScore}}</span>
+              <span class="iconfont">&#xe6cd;{{items.commentCount}}</span>
+              <span class="iconfont">&#xe634;{{items.averageScore}}</span>
               <span class="iconfont">&#xe621;</span>
             </p>
           </div>
@@ -149,10 +149,10 @@ export default {
       // console.log(this.buyLists)
       for(var i=0;i<4;i++){
         for(var n=i*4;n<i*4+4;n++){
-          this.arr1[i].push(this.buyLists[n])
+          this.arr1[i].push(this.buyLists[n].infos[0])
         }
       }
-      // console.log(this.arr1)
+      // console.log(this.arr1[0])
     }
   },
   created() {
